@@ -6,9 +6,10 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  plugins: [
-    // "/c:/projects/frontend/vue-projects/nuxt-projects/dorojnoe-fm.front/plugins/useBootstrap.client.ts",
-  ],
-
+  modules: ["@nuxthq/ui"],
   css: ["~/assets/scss/main.scss"],
+  colorMode: {
+    preference: "light",
+  },
+  plugins: [],
 });

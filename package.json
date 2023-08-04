@@ -10,13 +10,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxthq/ui": "^2.7.0",
     "@types/node": "^18.17.1",
     "nuxt": "^3.6.5",
     "sass": "^1.64.2"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "animate.css": "^4.1.1",
-    "bootstrap": "^5.3.1"
+    "animate.css": "^4.1.1"
   }
 }

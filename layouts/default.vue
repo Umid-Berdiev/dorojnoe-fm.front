@@ -47,13 +47,10 @@
 </script>
 
 <template>
-  <div class="default container-fluid">
-    <div class="row">
-      <TheSidebar id="sidebar" @toggle-sidebar="onCloseSidebar" />
-      <div
-        id="mainContent"
-        class="col animate__animated animate__fadeInLeft position-relative"
-      >
+  <UContainer class="default">
+    <TheSidebar id="sidebar" @toggle-sidebar="onCloseSidebar" />
+    <UCard class="w-screen">
+      <div class="" id="main-content">
         <img
           id="sidebarToggleIcon"
           class="toggle-icon position-absolute"
@@ -61,21 +58,21 @@
           alt="OpenIcon"
           @click="onToggleSidebar"
         />
-        <TheBreadcrumb />
-        <slot />
-        <TheFooter />
       </div>
-    </div>
-  </div>
+      <TheBreadcrumb />
+      <slot />
+
+      <template #footer>
+        <TheFooter />
+      </template>
+    </UCard>
+  </UContainer>
 </template>
 
 <style scoped lang="scss">
   .default {
     background: #f8f8fa;
-
-    .row {
-      min-height: 100vh;
-    }
+    display: flex;
 
     .toggle-icon {
       left: -0.9rem;

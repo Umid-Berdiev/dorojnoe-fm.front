@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-  //
+  import PrimaryHeading from "@/components/Headings/PrimaryHeading.vue";
 </script>
 
 <template>
-  <h1>Test</h1>
+  <TheBreadcrumb />
+  <PrimaryHeading>Плейлист</PrimaryHeading>
 </template>
 
 <style scoped lang="scss">

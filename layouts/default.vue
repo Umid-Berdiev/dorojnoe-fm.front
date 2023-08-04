@@ -3,12 +3,13 @@
     const sidebar = document.getElementById("sidebar");
     const sidebarOpenIcon = document.getElementById("sidebarOpenIcon");
     const mainContent = document.getElementById("mainContent");
-    console.log(sidebar.classList);
 
     if (sidebar) {
-      sidebar.classList.add("d-none");
-      sidebarOpenIcon.classList.remove("d-none");
-      mainContent.className = "col-12";
+      sidebar.classList.remove("animate__fadeInLeft");
+      sidebar.classList.add("animate__fadeOutLeft");
+      sidebarOpenIcon?.classList.remove("d-none");
+      if (mainContent)
+        mainContent.className = "col-12 animate__animated animate__fadeOutLeft";
     }
   }
 
@@ -16,30 +17,53 @@
     const sidebar = document.getElementById("sidebar");
     const sidebarOpenIcon = document.getElementById("sidebarOpenIcon");
     const mainContent = document.getElementById("mainContent");
-    console.log(sidebar.classList);
 
     if (sidebar) {
-      sidebar.classList.remove("d-none");
-      sidebarOpenIcon.classList.add("d-none");
-      mainContent.className = "col-12 col-md-8 col-lg-9";
+      console.log("ok");
+
+      sidebar.classList.remove("animate__fadeOutLeft");
+      sidebar.classList.add("animate__fadeInLeft");
+      sidebarOpenIcon?.classList.add("d-none");
+      if (mainContent)
+        mainContent.className =
+          "col-12 col-md-8 col-lg-9 animate__animated animate__fadeInLeft";
+    }
+  }
+
+  function onToggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    if (sidebar && mainContent) {
+      console.log("ok");
+
+      sidebar.classList.toggle("animate__fadeInLeft");
+      sidebar.classList.toggle("animate__fadeOutLeft");
+      sidebar.classList.toggle("d-none");
+      // mainContent.classList.toggle("animate__fadeInLeft");
+      // mainContent.classList.toggle("animate__fadeOutLeft");
     }
   }
 </script>
 
 <template>
-  <img
-    id="sidebarOpenIcon"
-    class="open-icon position-absolute d-none"
-    src="@/assets/icons/SidebarOpenCloseIcon.png"
-    alt="OpenIcon"
-    @click="onOpenSidebar"
-  />
   <div class="default container-fluid">
     <div class="row">
       <TheSidebar id="sidebar" @toggle-sidebar="onCloseSidebar" />
-      <div id="mainContent" class="col-12 col-md-8 col-lg-9">
+      <div
+        id="mainContent"
+        class="col animate__animated animate__fadeInLeft position-relative"
+      >
+        <img
+          id="sidebarToggleIcon"
+          class="toggle-icon position-absolute"
+          src="@/assets/icons/SidebarOpenCloseIcon.png"
+          alt="OpenIcon"
+          @click="onToggleSidebar"
+        />
         <TheBreadcrumb />
         <slot />
+        <TheFooter />
       </div>
     </div>
   </div>
@@ -52,10 +76,10 @@
     .row {
       min-height: 100vh;
     }
-  }
 
-  .open-icon {
-    left: -0.9rem;
-    top: 10rem;
+    .toggle-icon {
+      left: -0.9rem;
+      top: 10rem;
+    }
   }
 </style>

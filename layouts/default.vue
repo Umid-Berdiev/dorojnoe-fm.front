@@ -47,32 +47,25 @@
 </script>
 
 <template>
-  <UContainer class="default">
+  <div class="default">
     <TheSidebar id="sidebar" @toggle-sidebar="onCloseSidebar" />
-    <UCard class="w-screen">
-      <div class="" id="main-content">
-        <img
-          id="sidebarToggleIcon"
-          class="toggle-icon position-absolute"
-          src="@/assets/icons/SidebarOpenCloseIcon.png"
-          alt="OpenIcon"
-          @click="onToggleSidebar"
-        />
-      </div>
-      <TheBreadcrumb />
+    <div id="main-content" class="p-4 sm:ml-64 min-h-screen min-w-screen">
+      <img
+        id="sidebarToggleIcon"
+        class="toggle-icon absolute"
+        src="@/assets/icons/SidebarOpenCloseIcon.png"
+        alt="OpenIcon"
+        @click="onToggleSidebar"
+      />
       <slot />
-
-      <template #footer>
-        <TheFooter />
-      </template>
-    </UCard>
-  </UContainer>
+      <TheFooter />
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
   .default {
     background: #f8f8fa;
-    display: flex;
 
     .toggle-icon {
       left: -0.9rem;

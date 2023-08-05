@@ -3,7 +3,7 @@ import IconCamera from 'assets/icons/iconCamera.vue';
 import IconNewspaper from 'assets/icons/iconNewspaper.vue';
 import IconProgram from 'assets/icons/iconProgram.vue';
 import IconGift from 'assets/icons/iconGift.vue';
-import iconMedia from 'assets/icons/iconMedia.vue';
+import IconMedia from 'assets/icons/iconMedia.vue';
 
 </script>
 <template>

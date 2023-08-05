@@ -14,12 +14,13 @@
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 1rem;
+    margin-bottom: 2rem;
 
     .content {
       color: #162826;
       font-family: Roboto Condensed;
-      font-size: 24px;
+      font-size: 1.5rem;
       font-style: normal;
       font-weight: 700;
       line-height: normal;

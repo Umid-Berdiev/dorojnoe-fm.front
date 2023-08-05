@@ -7,19 +7,25 @@ const toggleSidebar = () => {
 </script>
 
 <template>
-  <!-- <TheSidebar /> -->
-  <div class="default flex">
-    <TheSidebar :class="{ 'sidebar-open': sidebarOpen }" />
-    <main id="main-content" class="min-h-screen w-auto relative p-4">
+  <div class="default overflow-hidden block md:flex">
+    <HeaderMobile />
+    <TheSidebar
+      class="hidden md:block"
+      :class="{ 'sidebar-open': sidebarOpen }"
+    />
+    <main
+      id="main-content"
+      class="mt-20 md:mt-0 min-h-screen w-auto relative p-4"
+    >
       <img
         id="sidebarToggleIcon"
-        class="toggle-icon absolute cursor-pointer"
+        class="hidden md:block toggle-icon absolute cursor-pointer"
         src="@/assets/icons/SidebarOpenCloseIcon.png"
         alt="OpenIcon"
         @click="toggleSidebar"
       />
       <slot />
-      <TheFooter />
+      <!-- <TheFooter /> -->
     </main>
   </div>
 </template>

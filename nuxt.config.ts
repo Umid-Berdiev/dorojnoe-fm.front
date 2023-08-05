@@ -1,15 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   typescript: {
     shim: false,
   },
 
-  modules: ["@nuxthq/ui"],
+  modules: [],
   css: ["~/assets/scss/main.scss"],
-  colorMode: {
-    preference: "light",
-  },
   plugins: [],
+  components: {
+    global: true,
+    dirs: ["~/components"],
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });

@@ -6,10 +6,17 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ["@nuxthq/ui"],
+  modules: [],
   css: ["~/assets/scss/main.scss"],
-  colorMode: {
-    preference: "light",
-  },
   plugins: [],
+  components: {
+    global: true,
+    dirs: ["~/components"],
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });

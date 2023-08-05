@@ -49,7 +49,7 @@
 <template>
   <div class="default">
     <TheSidebar @toggle-sidebar="onCloseSidebar" />
-    <main id="main-content" class="sm:ml-64 min-h-screen w-auto relative p-4">
+    <main id="main-content" class="sm:ml-64 w-auto relative p-4 bg-inherit">
       <img
         id="sidebarToggleIcon"
         class="toggle-icon absolute"
@@ -58,8 +58,8 @@
         @click="onToggleSidebar"
       />
       <slot />
+      <TheFooter />
     </main>
-    <TheFooter />
   </div>
 </template>
 
@@ -70,6 +70,7 @@
     .toggle-icon {
       left: -0.9rem;
       top: 10rem;
+      z-index: 1000;
     }
   }
 </style>

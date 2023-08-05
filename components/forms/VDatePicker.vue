@@ -59,7 +59,7 @@
     >
       <template #default="{ togglePopover, inputValue }">
         <button
-          class="datepicker-btn ring-transparent hover:bg-white shadow-none"
+          class="datepicker-btn ring-transparent hover:bg-white shadow-none text-base"
           color="white"
           @click="togglePopover"
         >
@@ -80,14 +80,9 @@
     padding: 10px 16px 8px 16px;
     align-items: flex-start;
     gap: 8px;
-    border-radius: 62px;
     background: #fff;
+    // border-radius: 62px;
 
-    color: #222;
-    // font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 128.571% */
+    @apply rounded-3xl;
   }
 </style>

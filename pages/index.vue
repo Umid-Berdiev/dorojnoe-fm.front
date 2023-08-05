@@ -4,6 +4,7 @@
   import VDatePicker from "@/components/forms/VDatePicker.vue";
   import VTimePicker from "@/components/forms/VTimePicker.vue";
   import SearchInput from "@/components/forms/SearchInput.vue";
+  import Playlist from "@/components/lists/Playlist/Playlist.vue";
 
   const options = ref([
     { id: 1, name: "Durward Reynolds", unavailable: false },
@@ -19,8 +20,7 @@
 <template>
   <TheBreadcrumb />
   <PrimaryHeading>Плейлист</PrimaryHeading>
-  <hr />
-  <div class="flex">
+  <div class="flex mb-6 gap-3">
     <CustomSelect
       :options="options"
       v-model="selectedOption"
@@ -29,8 +29,10 @@
     />
     <VDatePicker />
     <VTimePicker v-model="selectedTime" />
-    <SearchInput />
+    <SearchInput class="ml-auto" />
   </div>
+  <hr />
+  <Playlist />
 </template>
 
 <style scoped lang="scss">

@@ -10,6 +10,8 @@
     ChevronUpIcon,
     ChevronDownIcon,
   } from "@heroicons/vue/20/solid";
+  import SimpleBar from "simplebar-vue";
+  import "simplebar-vue/dist/simplebar.min.css";
 
   interface CustomSelectProps {
     options: any[];
@@ -44,9 +46,10 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="custom-select-btn relative text-left sm:text-sm"
-        :class="{ 'rounded-2xl': !open, 'rounded-t-2xl': open }"
+        class="custom-select-btn relative text-left sm:text-sm text-base"
+        :class="{ 'rounded-3xl': !open, 'rounded-my-t-3xl': open }"
       >
+        my-
         <span class="block truncate">{{
           options.find((option) => option[asValue] === selectedOption)[asLabel]
         }}</span>
@@ -64,36 +67,38 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-2xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
+          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
         >
-          <ListboxOption
-            v-slot="{ active, selected }"
-            v-for="option in options"
-            :key="option[asLabel]"
-            :value="option[asValue]"
-            as="template"
-          >
-            <li
-              :class="[
-                active ? 'bg-gray-100 text-gray-900' : 'text-gray-900',
-                'relative cursor-default select-none py-2 pl-10 pr-4',
-              ]"
+          <SimpleBar data-simplebar-auto-hide="false" class="h-40">
+            <ListboxOption
+              v-slot="{ active, selected }"
+              v-for="option in options"
+              :key="option[asLabel]"
+              :value="option[asValue]"
+              as="template"
             >
-              <span
+              <li
                 :class="[
-                  selected ? 'font-medium' : 'font-normal',
-                  'block truncate',
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-900',
+                  'relative cursor-default select-none py-2 pl-10 pr-4',
                 ]"
-                >{{ option[asLabel] }}</span
               >
-              <span
-                v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600"
-              >
-                <CheckIcon class="h-5 w-5" aria-hidden="true" />
-              </span>
-            </li>
-          </ListboxOption>
+                <span
+                  :class="[
+                    selected ? 'font-medium' : 'font-normal',
+                    'block truncate',
+                  ]"
+                  >{{ option[asLabel] }}</span
+                >
+                <span
+                  v-if="selected"
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600"
+                >
+                  <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                </span>
+              </li>
+            </ListboxOption>
+          </SimpleBar>
         </ListboxOptions>
       </Transition>
     </div>
@@ -106,13 +111,6 @@
     padding: 10px 40px 10px 16px;
     align-items: center;
     gap: 8px;
-    // border-radius: 62px;
     background: #fff;
-    color: var(--main-b-lack, #222);
-    // font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 128.571% */
   }
 </style>

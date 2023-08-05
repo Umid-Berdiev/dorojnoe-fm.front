@@ -49,7 +49,7 @@
 <template>
   <div class="default">
     <TheSidebar @toggle-sidebar="onCloseSidebar" />
-    <main id="main-content" class="sm:ml-64 w-auto relative p-4 bg-inherit">
+    <main id="main-content" class="sm:ml-64 w-auto relative p-8 bg-inherit">
       <img
         id="sidebarToggleIcon"
         class="toggle-icon absolute"
@@ -58,14 +58,14 @@
         @click="onToggleSidebar"
       />
       <slot />
-      <TheFooter />
     </main>
+    <TheFooter />
   </div>
 </template>
 
 <style scoped lang="scss">
   .default {
-    background: #f8f8fa;
+    @apply bg-gray-50;
 
     .toggle-icon {
       left: -0.9rem;

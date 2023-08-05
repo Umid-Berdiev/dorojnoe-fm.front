@@ -11,6 +11,7 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     borderRadius: {
       none: "0",
@@ -37,9 +38,13 @@ module.exports = {
       red: colors.red,
       inherit: "inherit",
     },
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto Condensed", ...defaultTheme.fontFamily.sans],
       },
     },
   },

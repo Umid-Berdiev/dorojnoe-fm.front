@@ -1,11 +1,20 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  withDefaults(
+    defineProps<{
+      underlined: boolean;
+    }>(),
+    {
+      underlined: false,
+    }
+  );
+</script>
 
 <template>
   <div class="primary-heading">
     <span class="content">
       <slot />
     </span>
-    <div class="line bg-primary" />
+    <div v-if="underlined" class="line bg-primary" />
   </div>
 </template>
 
@@ -19,12 +28,12 @@
 
     .content {
       color: #162826;
-      font-family: Roboto Condensed;
       font-size: 1.5rem;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       text-transform: uppercase;
+      @apply font-roboto;
     }
 
     .line {

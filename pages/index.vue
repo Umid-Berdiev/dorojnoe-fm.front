@@ -5,6 +5,7 @@
   import VTimePicker from "@/components/forms/VTimePicker.vue";
   import SearchInput from "@/components/forms/SearchInput.vue";
   import Playlist from "@/components/lists/Playlist/Playlist.vue";
+  import NewsCard from "@/components/cards/NewsCard/index.vue";
 
   const options = ref([
     { id: 1, name: "Durward Reynolds", unavailable: false },
@@ -19,7 +20,7 @@
 
 <template>
   <TheBreadcrumb />
-  <PrimaryHeading>Плейлист</PrimaryHeading>
+  <PrimaryHeading underlined>Плейлист</PrimaryHeading>
   <div class="flex mb-6 gap-3">
     <CustomSelect
       :options="options"
@@ -33,6 +34,7 @@
   </div>
   <hr />
   <Playlist />
+  <NewsCard />
 </template>
 
 <style scoped lang="scss">

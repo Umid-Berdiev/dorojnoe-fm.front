@@ -31,5 +31,6 @@
 <style scoped lang="scss">
   #default-search {
     color: var(--main-grey, #a7a7a7);
+    border: 1px solid #dbdbdb;
   }
 </style>

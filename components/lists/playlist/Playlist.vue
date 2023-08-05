@@ -6,10 +6,12 @@
 </script>
 
 <template>
-  <ul role="list" class="divide-y divide-gray-200 min-h-screen mt-9">
-    <PlaylistItem v-for="item in 5" />
-  </ul>
-  <PrimaryButton> Больше результатов </PrimaryButton>
+  <div class="container">
+    <ul role="list" class="divide-y divide-gray-200 min-h-screen mt-9 mb-16">
+      <PlaylistItem v-for="item in 5" />
+    </ul>
+    <PrimaryButton> Больше результатов </PrimaryButton>
+  </div>
 </template>
 
 <style scoped lang="scss">

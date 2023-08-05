@@ -49,7 +49,10 @@
 <template>
   <div class="default">
     <TheSidebar @toggle-sidebar="onCloseSidebar" />
-    <main id="main-content" class="sm:ml-64 w-auto relative p-8 bg-inherit">
+    <main
+      id="main-content"
+      class="sm:ml-64 w-auto relative px-8 pt-6 bg-inherit"
+    >
       <img
         id="sidebarToggleIcon"
         class="toggle-icon absolute"
@@ -65,7 +68,9 @@
 
 <style scoped lang="scss">
   .default {
-    @apply bg-gray-50;
+    @apply bg-gray-50 mx-auto;
+    max-width: 1280px;
+    position: relative;
 
     .toggle-icon {
       left: -0.9rem;

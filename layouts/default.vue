@@ -1,75 +1,46 @@
 <script lang="ts" setup>
-  function onCloseSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const sidebarOpenIcon = document.getElementById("sidebarOpenIcon");
-    const mainContent = document.getElementById("mainContent");
+const sidebarOpen = ref(true);
 
-    if (sidebar) {
-      sidebar.classList.remove("animate__fadeInLeft");
-      sidebar.classList.add("animate__fadeOutLeft");
-      sidebarOpenIcon?.classList.remove("d-none");
-      if (mainContent)
-        mainContent.className = "col-12 animate__animated animate__fadeOutLeft";
-    }
-  }
-
-  function onOpenSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const sidebarOpenIcon = document.getElementById("sidebarOpenIcon");
-    const mainContent = document.getElementById("mainContent");
-
-    if (sidebar) {
-      console.log("ok");
-
-      sidebar.classList.remove("animate__fadeOutLeft");
-      sidebar.classList.add("animate__fadeInLeft");
-      sidebarOpenIcon?.classList.add("d-none");
-      if (mainContent)
-        mainContent.className =
-          "col-12 col-md-8 col-lg-9 animate__animated animate__fadeInLeft";
-    }
-  }
-
-  function onToggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("mainContent");
-
-    if (sidebar && mainContent) {
-      console.log("ok");
-
-      sidebar.classList.toggle("animate__fadeInLeft");
-      sidebar.classList.toggle("animate__fadeOutLeft");
-      sidebar.classList.toggle("d-none");
-      // mainContent.classList.toggle("animate__fadeInLeft");
-      // mainContent.classList.toggle("animate__fadeOutLeft");
-    }
-  }
+const toggleSidebar = () => {
+  sidebarOpen.value = !sidebarOpen.value;
+};
 </script>
 
 <template>
-  <div class="default">
-    <TheSidebar @toggle-sidebar="onCloseSidebar" />
-    <main id="main-content" class="sm:ml-64 min-h-screen w-auto relative p-4">
+  <!-- <TheSidebar /> -->
+  <div class="default flex">
+    <TheSidebar :class="{ 'sidebar-open': sidebarOpen }" />
+    <main id="main-content" class="min-h-screen w-auto relative p-4">
       <img
         id="sidebarToggleIcon"
-        class="toggle-icon absolute"
+        class="toggle-icon absolute cursor-pointer"
         src="@/assets/icons/SidebarOpenCloseIcon.png"
         alt="OpenIcon"
-        @click="onToggleSidebar"
+        @click="toggleSidebar"
       />
       <slot />
+      <TheFooter />
     </main>
-    <TheFooter />
   </div>
 </template>
 
 <style scoped lang="scss">
-  .default {
-    background: #f8f8fa;
+.default {
+  background: #f8f8fa;
 
-    .toggle-icon {
-      left: -0.9rem;
-      top: 10rem;
-    }
+  .toggle-icon {
+    left: -0.9rem;
+    top: 10rem;
   }
+}
+
+.sidebar-open {
+  margin-left: -16rem; /* Sidebar ochilganda kengaytirish */
+}
+
+.toggle-icon {
+  left: -0.9rem;
+  top: 10rem;
+  transition: left 0.3s ease-in-out;
+}
 </style>

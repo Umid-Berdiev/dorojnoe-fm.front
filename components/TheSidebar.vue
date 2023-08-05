@@ -1,27 +1,48 @@
 <script lang="ts" setup>
-import IconLogo from 'assets/icons/iconLogo.vue';
-
-//
+import IconLogo from "assets/icons/iconLogo.vue";
+import IconStar from "assets/icons/iconStar.vue";
+import IconVote from "assets/icons/iconVote.vue";
+import IconArrowDown from "assets/icons/iconArrowDown.vue";
 </script>
 
 <template>
-  <button
-    class="bg-hamburger w-1/5 h-screen bg-no-repeat bg-center m-[14px] ml-5 absolute top-0 peer text-4xl"
-    id="aside"
-    type="button"
-  >
-    ≡
-  </button>
   <aside
-    class="grid fixed w-1/5 top-0 bg-[#fff] w-[233px] h-full -left-[233px] peer-focus:left-0 ease-out delay-150 duration-300 rounded-r-[25px] rounded-bl-[25px]"
-    id="aside"
+    class="sidebar bg-[#fff] w-64 p-4 transition-all duration-300 overflow-x-hidden"
   >
-    <div class="logo">
-      <IconLogo />
+    <div class="h-full pl-6 pr-3 pt-1 overflow-y-auto dark:bg-gray-800">
+      <div class="logo mb-4 max-w-[160px] max-h-[138px] mx-auto">
+        <NuxtLink to="/">
+          <IconLogo />
+        </NuxtLink>
+      </div>
+      <div class="radio-channel mb-6 cursor-pointer">
+        <div class="dropdown flex gap-2 items-center">
+          <div class="drop-icon mr-2">
+            <IconStar />
+          </div>
+          <div class="channel-name">
+            <span>Москва</span>
+            <span>/</span>
+            <span>96,0 FM</span>
+          </div>
+          <div class="icon">
+            <IconArrowDown />
+          </div>
+        </div>
+      </div>
+      <div class="radio-player">
+        <RadioPlayer />
+      </div>
+      <div class="vote mb-3.5">
+        <button type="button">
+          <IconVote class="w-full" />
+        </button>
+      </div>
+      <NavLink />
     </div>
   </aside>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 //
 </style>

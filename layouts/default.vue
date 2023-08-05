@@ -69,7 +69,7 @@
 <style scoped lang="scss">
   .default {
     @apply bg-gray-50 mx-auto;
-    max-width: 1280px;
+    // max-width: 1280px;
     position: relative;
 
     .toggle-icon {

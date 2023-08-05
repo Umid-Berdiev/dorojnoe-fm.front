@@ -51,7 +51,7 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="timepicker-btn relative text-left sm:text-sm text-base"
+        class="timepicker-btn relative text-left sm:text-sm"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="block truncate">{{ selectedOption }}</span>
@@ -114,5 +114,6 @@
     align-items: center;
     gap: 8px;
     background: #fff;
+    @apply text-base;
   }
 </style>

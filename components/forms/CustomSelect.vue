@@ -46,10 +46,9 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="custom-select-btn relative text-left sm:text-sm text-base"
-        :class="{ 'rounded-3xl': !open, 'rounded-my-t-3xl': open }"
+        class="custom-select-btn relative text-left sm:text-sm"
+        :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
-        my-
         <span class="block truncate">{{
           options.find((option) => option[asValue] === selectedOption)[asLabel]
         }}</span>
@@ -112,5 +111,6 @@
     align-items: center;
     gap: 8px;
     background: #fff;
+    @apply text-base;
   }
 </style>

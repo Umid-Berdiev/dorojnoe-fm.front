@@ -5,7 +5,7 @@
     <span class="content">
       <slot />
     </span>
-    <div class="line" />
+    <div class="line bg-primary" />
   </div>
 </template>
 
@@ -30,7 +30,7 @@
     .line {
       width: 80px;
       height: 4px;
-      background: #da3832;
+      // background: #da3832;
     }
   }
 </style>

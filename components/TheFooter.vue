@@ -9,7 +9,7 @@ import YoutubeIcon from "@/components/icons/socials/YoutubeIcon.vue";
 </script>
 
 <template>
-  <section class="bg-inherit">
+  <footer class="sm:ml-64 bottom-0 bg-inherit">
     <div class="radios flex w-full p-8 md:py-8 justify-between">
       <img src="@/assets/images/Group_1780.svg" alt="Group_1780" />
       <img src="@/assets/images/Group_1775.svg" alt="Group_1775" />
@@ -23,27 +23,27 @@ import YoutubeIcon from "@/components/icons/socials/YoutubeIcon.vue";
       <div class="flex flex-row">
         <div class="basis-1/4">
           <div class="main-links">
-            <a class="main-links-item" href="">Артисты</a>
-            <a class="main-links-item" href="">Радиостанция</a>
-            <a class="main-links-item" href="">Новости</a>
-            <a class="main-links-item" href="">Программы эфира</a>
+            <a class="text-base" href="">Артисты</a>
+            <a class="text-base" href="">Радиостанция</a>
+            <a class="text-base" href="">Новости</a>
+            <a class="text-base" href="">Программы эфира</a>
           </div>
         </div>
         <div class="basis-1/4">
           <div class="main-links">
-            <a class="main-links-item" href="">Акции и события</a>
-            <a class="main-links-item" href="">Плейлист</a>
-            <a class="main-links-item" href="">Итоговый хит-парад 2022</a>
-            <a class="main-links-item" href="">
+            <a class="text-base" href="">Акции и события</a>
+            <a class="text-base" href="">Плейлист</a>
+            <a class="text-base" href="">Итоговый хит-парад 2022</a>
+            <a class="text-base" href="">
               Фестиваль «Звезды дорожного радио»
             </a>
           </div>
         </div>
         <div class="basis-1/4">
           <div class="main-links">
-            <a href="" class="main-links-item">Заказать песню</a>
-            <a href="" class="main-links-item">Прямой эфир</a>
-            <a href="" class="main-links-item">Поиск по сайту</a>
+            <a href="" class="text-base">Заказать песню</a>
+            <a href="" class="text-base">Прямой эфир</a>
+            <a href="" class="text-base">Поиск по сайту</a>
           </div>
         </div>
         <div class="ml-auto">
@@ -103,30 +103,19 @@ import YoutubeIcon from "@/components/icons/socials/YoutubeIcon.vue";
         </div>
       </div>
     </div>
-  </section>
+  </footer>
 </template>
 
 <style scoped lang="scss">
 .radios {
   background-color: #eaeaef;
-}
 
-.main-links {
-  display: flex;
-  width: 160px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-
-  .main-links-item {
-    color: var(--main-b-lack, #222);
-
-    /* Title/Small */
-    // font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px; /* 128.571% */
+  .main-links {
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }
 
@@ -160,12 +149,12 @@ import YoutubeIcon from "@/components/icons/socials/YoutubeIcon.vue";
     .frame56-item {
       color: var(--main-grey, #a7a7a7);
 
-      /* Title/Very small */
+      // /* Title/Very small */
       // font-family: Inter;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 12px; /* 100% */
+      // font-size: 12px;
+      // font-style: normal;
+      // font-weight: 600;
+      // line-height: 12px; /* 100% */
     }
   }
 }
@@ -180,7 +169,6 @@ import YoutubeIcon from "@/components/icons/socials/YoutubeIcon.vue";
   font-weight: 500;
   line-height: 16px; /* 133.333% */
 }
-
 .socials {
   display: inline-flex;
   align-items: flex-start;

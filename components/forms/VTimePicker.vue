@@ -52,7 +52,7 @@
     <div class="relative">
       <ListboxButton
         class="timepicker-btn relative text-left sm:text-sm"
-        :class="{ 'rounded-2xl': !open, 'rounded-t-2xl': open }"
+        :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="block truncate">{{ selectedOption }}</span>
         <span
@@ -69,7 +69,7 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-2xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
+          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
         >
           <SimpleBar data-simplebar-auto-hide="false" class="h-40">
             <ListboxOption
@@ -113,13 +113,7 @@
     padding: 10px 40px 10px 16px;
     align-items: center;
     gap: 8px;
-    // border-radius: 62px;
     background: #fff;
-    color: var(--main-b-lack, #222);
-    // font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 128.571% */
+    @apply text-base;
   }
 </style>

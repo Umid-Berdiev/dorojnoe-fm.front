@@ -19,4 +19,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  buildModules: ["@nuxtjs/google-fonts"],
+  googleFonts: {
+    display: "swap",
+    families: {
+      Inter: {
+        wight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+      "Roboto Condensed": {
+        wight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+    },
+  },
 });

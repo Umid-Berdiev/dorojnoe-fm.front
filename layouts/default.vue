@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const sidebarOpen = ref(true);
+const sidebarOpen = ref(false);
 
 const toggleSidebar = () => {
   sidebarOpen.value = !sidebarOpen.value;
@@ -25,8 +25,8 @@ const toggleSidebar = () => {
         @click="toggleSidebar"
       />
       <slot />
-      <!-- <TheFooter /> -->
     </main>
+    <!-- <TheFooter /> -->
   </div>
 </template>
 

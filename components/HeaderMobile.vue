@@ -3,7 +3,7 @@ import IconLogoMobile from "assets/icons/iconLogoMobile.vue";
 import IconBurger from "assets/icons/iconBurger.vue";
 import IconStar from "assets/icons/iconStar.vue";
 import IconClose from "assets/icons/iconClose.vue";
-const burgerMenu = ref(true);
+const burgerMenu = ref(false);
 
 const toggleBurger = () => {
   burgerMenu.value = !burgerMenu.value;

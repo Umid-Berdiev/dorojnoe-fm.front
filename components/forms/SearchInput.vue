@@ -21,9 +21,20 @@
     <input
       type="search"
       id="default-search"
-      class="block w-full p-2 pl-10 text-sm text-gray-900 rounded-2xl bg-white focus:ring-blue-500 focus:border-blue-500"
+      class="block w-full p-2.5 pl-10 text-gray-900 rounded-2xl bg-white focus:ring-blue-500 focus:border-blue-500"
       placeholder="Поиск"
       required
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+  #default-search {
+    color: var(--main-grey, #a7a7a7);
+    // font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+  }
+</style>

@@ -62,7 +62,7 @@
       </button>
       <div class="controls flex flex-col justify-between">
         <button type="button" class="volume" @click="openVolume">
-          <IconsVolumeIcon />
+          <VolumeIcon />
         </button>
         <div
           v-if="showVolume"

@@ -3,7 +3,7 @@
     <div
       class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none"
     >
-      <IconsSearchIcon />
+      <SearchIcon />
     </div>
     <input
       type="search"

@@ -12,10 +12,10 @@
   >
     <div class="flex items-center gap-5">
       <NuxtLink to="/">
-        <IconsLogoIcon />
+        <LogoIcon />
       </NuxtLink>
       <div class="flex items-center">
-        <IconsStarIcon />
+        <StarIcon />
         <div
           class="font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-black font-inter text-base"
         >

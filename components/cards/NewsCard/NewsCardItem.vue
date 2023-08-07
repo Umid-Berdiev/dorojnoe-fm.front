@@ -1,34 +1,42 @@
 <script setup lang="ts">
-  //
+  interface NewsItemProps {
+    title: string;
+    body: string;
+    image: string;
+    date: string;
+  }
+
+  defineProps<{
+    item: NewsItemProps;
+  }>();
 </script>
 
 <template>
   <div class="news-card-item rounded-2xl">
-    <a href="#">
+    <NuxtLink to="#" class="relative">
       <img
         srcset="
           @/assets/images/news_cover_photo_1.png 1x,
           @/assets/images/news_cover_photo_1.png 2x
         "
       />
-    </a>
+      <button
+        class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs"
+      >
+        {{ item.title }}
+      </button>
+    </NuxtLink>
     <div class="mt-4">
       <div class="flex flex-row items-start justify-start gap-[0.14rem]">
         <div
           class="relative leading-[0.86rem] text-sm text-main-grey font-semibold"
         >
-          Вчера в
-        </div>
-        <div
-          class="relative leading-[0.86rem] text-sm text-main-grey font-semibold"
-        >
-          9:00
+          {{ item.date }}
         </div>
       </div>
       <NuxtLink to="/">
-        <span class="news-title">
-          Экскурсионные маршруты в Перми. Перелёты на гидросамолётах в Таиланде.
-          «Сковородоблинные» бегуны в Тюменской области
+        <span class="news-body">
+          {{ item.body }}
         </span>
       </NuxtLink>
     </div>
@@ -37,7 +45,7 @@
 
 <style scoped lang="scss">
   .news-card-item {
-    .news-title {
+    .news-body {
       @apply text-lg font-medium leading-6 font-roboto-condensed;
     }
 

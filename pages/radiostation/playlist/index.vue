@@ -20,10 +20,10 @@
 
 <template>
   <TheMobileBreadcrumb />
-  <TheBreadcrumb />
+  <TheBreadcrumb :path="['Радиостанция', 'Плейлист']" />
   <div class="flex">
     <PrimaryHeading underlined>Плейлист</PrimaryHeading>
-    <IconsSearchMIcon class="lg:hidden ml-auto mt-1" />
+    <SearchMIcon class="lg:hidden ml-auto mt-1" />
   </div>
   <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-6">
     <CustomSelect
@@ -39,7 +39,7 @@
     </div>
     <SearchInput class="ml-auto hidden lg:block" />
   </div>
-  <hr />
+  <hr class="text-[#DBDBDB]" />
   <Playlist />
   <NewsCard />
 </template>

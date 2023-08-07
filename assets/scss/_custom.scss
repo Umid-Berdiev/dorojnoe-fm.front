@@ -12,23 +12,33 @@
 #carousel {
   .swiper-wrapper {
     align-items: center !important;
+    justify-content: space-between;
 
-    // .swiper-slide {
-    //   text-align: center;
-    //   font-size: 18px;
-    //   background: #fff;
+    .swiper-slide {
+      width: auto !important;
+      text-align: center;
 
-    //   /* Center slide text vertically */
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-    // .swiper-slide img {
-    //   display: block;
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: cover;
-    // }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+    }
+  }
+}
+
+#week-carousel {
+  .swiper-wrapper {
+    align-items: center !important;
+
+    .swiper-slide {
+      width: auto !important;
+    }
   }
 }

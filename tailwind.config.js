@@ -50,7 +50,7 @@ module.exports = {
           100: "#dadbe2",
           200: "#dbdbdb",
         },
-        // gray: "#162826",
+        gray2: "#162826",
         "main-bg-light": "#f8f8fa",
         black: "#0a0a0a",
         gray: colors.gray,
@@ -61,6 +61,7 @@ module.exports = {
       },
       borderRadius: {
         "43xl": "62px",
+        "4xl": "2rem", // 32px
       },
       spacing: {
         18: "4.5rem",

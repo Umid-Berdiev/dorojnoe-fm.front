@@ -25,7 +25,6 @@
             spaceBetween: 40,
           },
         }"
-        :cssMode="true"
       >
         <SwiperSlide>
           <img
@@ -34,7 +33,7 @@
               @/assets/images/Group_1780.svg 2x
             "
             alt="Group_1780"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -44,7 +43,7 @@
               @/assets/images/Group_1775.svg 2x
             "
             alt="Group_1775"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -54,7 +53,7 @@
               @/assets/images/Group_1772.svg 2x
             "
             alt="Group_1772"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -64,7 +63,7 @@
               @/assets/images/Group_1779.svg 2x
             "
             alt="Group_1779"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -74,7 +73,7 @@
               @/assets/images/Group_1778.svg 2x
             "
             alt="Group_1778"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -84,7 +83,7 @@
               @/assets/images/Group_1774.svg 2x
             "
             alt="Group_1774"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -94,7 +93,7 @@
               @/assets/images/Group_1773.svg 2x
             "
             alt="Group_1773"
-            class="w-18 h-14 lg:w-20"
+            class="w-auto"
           />
         </SwiperSlide>
       </Swiper>
@@ -183,13 +182,13 @@
     </div>
     <div class="px-3 pt-1 pb-3 mt-2">
       <div class="blue-bird">
-        <IconsPlayMobile />
+        <PlayMobile />
         <div class="flex flex-col">
           <span class="singer-fullname">Владимир Пресняков</span>
           <span class="song-title">Синяя птица</span>
         </div>
         <div class="p-3 ml-auto">
-          <IconsLinkIcon />
+          <LinkIcon />
         </div>
       </div>
     </div>

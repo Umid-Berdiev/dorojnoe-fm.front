@@ -32,10 +32,13 @@ export default defineNuxtConfig({
   ],
   css: ["~/assets/scss/main.scss"],
   plugins: [],
-  components: {
-    global: true,
-    dirs: ["~/components"],
-  },
+  components: [
+    {
+      global: true,
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},

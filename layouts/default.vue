@@ -51,15 +51,8 @@
     <TheSidebar @toggle-sidebar="onCloseSidebar" />
     <main
       id="main-content"
-      class="sm:ml-64 w-auto relative px-8 pt-6 bg-inherit"
+      class="sm:ml-64 w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
     >
-      <img
-        id="sidebarToggleIcon"
-        class="toggle-icon absolute"
-        src="@/assets/icons/SidebarOpenCloseIcon.png"
-        alt="OpenIcon"
-        @click="onToggleSidebar"
-      />
       <slot />
     </main>
     <TheFooter />
@@ -68,7 +61,7 @@
 
 <style scoped lang="scss">
   .default {
-    @apply bg-gray-50 mx-auto;
+    @apply bg-main-bg-light mx-auto;
     // max-width: 1280px;
     position: relative;
 

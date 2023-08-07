@@ -6,7 +6,30 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: [],
+  modules: [
+    // [
+    //   "@nuxtjs/google-fonts",
+    //   {
+    //     families: {
+    //       "Roboto Condensed": true,
+    //       download: true,
+    //       inject: true,
+    //     },
+    //   },
+    // ],
+    // [
+    //   "@nuxtjs/google-fonts",
+    //   {
+    //     families: {
+    //       Inter: true,
+    //       download: true,
+    //       inject: true,
+    //     },
+    //   },
+    // ],
+    "nuxt-swiper",
+    // "@nuxtjs/google-fonts",
+  ],
   css: ["~/assets/scss/main.scss"],
   plugins: [],
   components: {
@@ -19,16 +42,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  buildModules: ["@nuxtjs/google-fonts"],
-  googleFonts: {
-    display: "swap",
-    families: {
-      Inter: {
-        wight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      },
-      "Roboto Condensed": {
-        wight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      },
-    },
-  },
+  // buildModules: ["@nuxtjs/google-fonts"],
+  // googleFonts: {
+  //   families: {
+  //     "Roboto Condensed": true,
+  //     Inter: true,
+  //   },
+  //   download: true,
+  //   inject: true,
+  //   overwriting: true,
+  // },
 });

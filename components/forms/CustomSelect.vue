@@ -46,7 +46,7 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="custom-select-btn relative text-left sm:text-sm"
+        class="custom-select-btn relative text-left sm:text-sm w-full"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="block truncate">{{
@@ -66,7 +66,7 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
+          class="options-wrapper absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
         >
           <SimpleBar data-simplebar-auto-hide="false" class="h-40">
             <ListboxOption
@@ -111,6 +111,10 @@
     align-items: center;
     gap: 8px;
     background: #fff;
+    @apply text-base;
+  }
+
+  .options-wrapper {
     @apply text-base;
   }
 </style>

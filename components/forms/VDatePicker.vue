@@ -1,10 +1,6 @@
 <script setup lang="ts">
   import { DatePicker } from "v-calendar";
-  import {
-    CheckIcon,
-    ChevronUpIcon,
-    ChevronDownIcon,
-  } from "@heroicons/vue/20/solid";
+  import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
   import "v-calendar/style.css";
 
   const props = withDefaults(
@@ -58,16 +54,14 @@
       @popover-will-hide="isOpen = false"
     >
       <template #default="{ togglePopover, inputValue }">
-        <button
-          class="datepicker-btn ring-transparent hover:bg-white shadow-none text-base"
-          color="white"
-          @click="togglePopover"
-        >
+        <button class="datepicker-btn" color="white" @click="togglePopover">
           <!-- :ui="{ rounded: 'rounded-full' }" -->
           <!-- class="px-4 py-2 ring-transparent shadow-none font-normal hover:bg-white" -->
-          {{ inputValue }}
-          <ChevronUpIcon v-if="isOpen" class="h-5 w-5" aria-hidden="true" />
-          <ChevronDownIcon v-else class="h-5 w-5" aria-hidden="true" />
+          <span>{{ inputValue }}</span>
+          <span class="pointer-events-none flex items-center ml-auto">
+            <ChevronUpIcon v-if="isOpen" class="h-5 w-5" aria-hidden="true" />
+            <ChevronDownIcon v-else class="h-5 w-5" aria-hidden="true" />
+          </span>
         </button>
       </template>
     </DatePicker>
@@ -76,13 +70,9 @@
 
 <style scoped lang="scss">
   .datepicker-btn {
-    display: flex;
     padding: 10px 16px 8px 16px;
-    align-items: flex-start;
-    gap: 8px;
-    background: #fff;
     // border-radius: 62px;
 
-    @apply rounded-3xl;
+    @apply flex bg-white rounded-3xl gap-2 ring-transparent hover:bg-white shadow-none text-base items-center;
   }
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   withDefaults(
     defineProps<{
-      underlined: boolean;
+      underlined?: boolean;
     }>(),
     {
       underlined: false,
@@ -14,7 +14,7 @@
     <span class="content">
       <slot />
     </span>
-    <div v-if="underlined" class="line bg-primary" />
+    <div v-if="underlined" class="line bg-firebrick" />
   </div>
 </template>
 
@@ -33,13 +33,12 @@
       font-weight: 700;
       line-height: normal;
       text-transform: uppercase;
-      @apply font-roboto;
+      @apply font-roboto-condensed;
     }
 
     .line {
       width: 80px;
       height: 4px;
-      // background: #da3832;
     }
   }
 </style>

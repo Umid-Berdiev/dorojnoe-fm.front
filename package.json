@@ -23,6 +23,7 @@
     "@heroicons/vue": "^2.0.18",
     "@popperjs/core": "^2.11.8",
     "animate.css": "^4.1.1",
+    "nuxt-swiper": "^1.2.0",
     "simplebar-vue": "^2.3.3",
     "v-calendar": "^3.0.3"
   }

@@ -9,84 +9,151 @@
 </script>
 
 <template>
-  <footer class="sm:ml-64 bottom-0 bg-inherit">
-    <div class="radios flex w-full p-8 md:py-8 justify-between">
-      <img src="@/assets/images/Group_1780.svg" alt="Group_1780" />
-      <img src="@/assets/images/Group_1775.svg" alt="Group_1775" />
-      <img src="@/assets/images/Group_1772.svg" alt="Group_1772" />
-      <img src="@/assets/images/Group_1779.svg" alt="Group_1779" />
-      <img src="@/assets/images/Group_1778.svg" alt="Group_1778" />
-      <img src="@/assets/images/Group_1774.svg" alt="Group_1774" />
-      <img src="@/assets/images/Group_1773.svg" alt="Group_1773" />
+  <section class="sm:ml-64 bottom-0 bg-inherit mt-20 md:mt-28">
+    <div class="px-3 py-4 lg:px-8 lg:py-4 bg-[#eaeaef]">
+      <Swiper
+        id="carousel"
+        :spaceBetween="20"
+        :slidesPerView="3"
+        :breakpoints="{
+          '768': {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          '1280': {
+            slidesPerView: 7,
+            spaceBetween: 40,
+          },
+        }"
+        :cssMode="true"
+      >
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1780.svg 1x,
+              @/assets/images/Group_1780.svg 2x
+            "
+            alt="Group_1780"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1775.svg 1x,
+              @/assets/images/Group_1775.svg 2x
+            "
+            alt="Group_1775"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1772.svg 1x,
+              @/assets/images/Group_1772.svg 2x
+            "
+            alt="Group_1772"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1779.svg 1x,
+              @/assets/images/Group_1779.svg 2x
+            "
+            alt="Group_1779"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1778.svg 1x,
+              @/assets/images/Group_1778.svg 2x
+            "
+            alt="Group_1778"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1774.svg 1x,
+              @/assets/images/Group_1774.svg 2x
+            "
+            alt="Group_1774"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            srcset="
+              @/assets/images/Group_1773.svg 1x,
+              @/assets/images/Group_1773.svg 2x
+            "
+            alt="Group_1773"
+            class="w-18 h-14 lg:w-20"
+          />
+        </SwiperSlide>
+      </Swiper>
     </div>
-    <div class="mx-auto p-8 md:py-8">
-      <div class="flex flex-row">
-        <div class="basis-1/4">
-          <div class="main-links">
-            <a class="text-base" href="">Артисты</a>
-            <a class="text-base" href="">Радиостанция</a>
-            <a class="text-base" href="">Новости</a>
-            <a class="text-base" href="">Программы эфира</a>
-          </div>
+    <div class="flex mx-auto px-3 py-5 lg:px-8 lg:py-10">
+      <div class="main-links grid grid-cols-2 md:grid-cols-3 lg:w-3/4 gap-y-2">
+        <NuxtLink to="/">Артисты</NuxtLink>
+        <NuxtLink to="/">Акции и события</NuxtLink>
+        <NuxtLink to="/">Заказать песню</NuxtLink>
+        <NuxtLink to="/">Радиостанция</NuxtLink>
+        <NuxtLink to="/">Плейлист</NuxtLink>
+        <NuxtLink to="/">Прямой эфир</NuxtLink>
+        <NuxtLink to="/">Новости</NuxtLink>
+        <NuxtLink to="/">Итоговый хит-парад 2022</NuxtLink>
+        <NuxtLink to="/">Поиск по сайту</NuxtLink>
+        <NuxtLink to="/">Программы эфира</NuxtLink>
+        <NuxtLink to="/"> Фестиваль «Звезды дорожного радио» </NuxtLink>
+      </div>
+      <div class="stores">
+        <div class="stores-items">
+          <NuxtLink to="/">
+            <PlayStoreIcon />
+          </NuxtLink>
+          <NuxtLink to="/">
+            <AppleStoreIcon />
+          </NuxtLink>
+          <NuxtLink to="/">
+            <MiStoreIcon />
+          </NuxtLink>
         </div>
-        <div class="basis-1/4">
-          <div class="main-links">
-            <a class="text-base" href="">Акции и события</a>
-            <a class="text-base" href="">Плейлист</a>
-            <a class="text-base" href="">Итоговый хит-парад 2022</a>
-            <a class="text-base" href="">
-              Фестиваль «Звезды дорожного радио»
-            </a>
-          </div>
-        </div>
-        <div class="basis-1/4">
-          <div class="main-links">
-            <a href="" class="text-base">Заказать песню</a>
-            <a href="" class="text-base">Прямой эфир</a>
-            <a href="" class="text-base">Поиск по сайту</a>
-          </div>
-        </div>
-        <div class="ml-auto">
-          <div class="stores">
-            <div class="stores-items">
-              <a href="">
-                <PlayStoreIcon />
-              </a>
-              <a href="">
-                <AppleStoreIcon />
-              </a>
-              <a href="">
-                <MiStoreIcon />
-              </a>
-            </div>
-            <img src="@/assets/images/qr_code.png" alt="QR code image" />
-          </div>
-        </div>
+        <img
+          srcset="@/assets/images/qr_code.png, @/assets/images/qr_code.png 2x"
+          alt="QR code image"
+          width="156"
+          height="156"
+        />
       </div>
     </div>
-    <div class="frame56-wrapper p-8">
+    <div class="frame56-wrapper px-3 pt-1 lg:px-8 lg:pt-3">
       <div class="frame56">
-        <span class="frame56-item"
-          >Звёзды «Дорожного радио» с утра пораньше</span
-        >
-        <span class="frame56-item">Запаска</span>
-        <span class="frame56-item">Путешествие с удовольствием</span>
-        <span class="frame56-item">Танцы по-русски</span>
-        <span class="frame56-item">Музыкальное обозрение</span>
-        <span class="frame56-item">Посиделки на Дорожном радио</span>
-        <span class="frame56-item">Новости</span>
-        <span class="frame56-item">Дорожная хроника</span>
-        <span class="frame56-item">Общественный транспорт</span>
-        <span class="frame56-item">Негородская жизнь</span>
-        <span class="frame56-item">Семейный час</span>
-        <span class="frame56-item">Добрый вечер</span>
-        <span class="frame56-item">Вместе за безопасность</span>
-        <span class="frame56-item">Звёзды Дорожного радио. ТОП 10</span>
-        <span class="frame56-item">То время</span>
+        <span>Звёзды «Дорожного радио» с утра пораньше</span>
+        <span>Запаска</span>
+        <span>Путешествие с удовольствием</span>
+        <span>Танцы по-русски</span>
+        <span>Музыкальное обозрение</span>
+        <span>Посиделки на Дорожном радио</span>
+        <span>Новости</span>
+        <span>Дорожная хроника</span>
+        <span>Общественный транспорт</span>
+        <span>Негородская жизнь</span>
+        <span>Семейный час</span>
+        <span>Добрый вечер</span>
+        <span>Вместе за безопасность</span>
+        <span>Звёзды Дорожного радио. ТОП 10</span>
+        <span>То время</span>
       </div>
     </div>
-    <div class="flex flex-row p-8">
-      <div class="basis-3/4">
+    <div class="flex flex-col lg:flex-row p-3 lg:px-8 lg:pt-8">
+      <div class="lg:basis-3/4">
         <span class="footer-last-text">
           Любое использование материалов допускается только с согласия редакции
           при наличии ссылки на ресурс. Онлайн-трансляция эфирного потока в сети
@@ -94,8 +161,19 @@
           регистрации Эл № ФС77-61841. Выдано Роскомнадзором 18 мая 2015 года.
         </span>
       </div>
-      <div class="ml-auto">
-        <div class="socials">
+      <div class="stores-mobile mt-8">
+        <NuxtLink to="/">
+          <PlayStoreIcon />
+        </NuxtLink>
+        <NuxtLink to="/">
+          <AppleStoreIcon />
+        </NuxtLink>
+        <NuxtLink to="/">
+          <MiStoreIcon />
+        </NuxtLink>
+      </div>
+      <div class="inline-flex lg:basis-1/4 mt-6 lg:mt-auto">
+        <div class="socials lg:ml-auto">
           <VKIcon />
           <OKIcon />
           <TelegramIcon />
@@ -103,7 +181,19 @@
         </div>
       </div>
     </div>
-  </footer>
+    <div class="px-3 pt-1 pb-3 mt-2">
+      <div class="blue-bird">
+        <IconsPlayMobile />
+        <div class="flex flex-col">
+          <span class="singer-fullname">Владимир Пресняков</span>
+          <span class="song-title">Синяя птица</span>
+        </div>
+        <div class="p-3 ml-auto">
+          <IconsLinkIcon />
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -112,18 +202,11 @@
   }
 
   .main-links {
-    display: flex;
-    width: 160px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    @apply text-sm lg:text-base font-semibold lg:font-bold;
   }
 
   .stores {
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 28px;
+    @apply hidden lg:inline-flex lg:gap-5 xl:gap-7 lg:w-1/4 justify-end;
 
     .stores-items {
       display: flex;
@@ -136,43 +219,50 @@
   }
 
   .frame56-wrapper {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @apply inline-flex flex-col items-start;
 
     .frame56 {
-      display: flex;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-
-      .frame56-item {
-        color: var(--main-grey, #a7a7a7);
-
-        // /* Title/Very small */
-        // font-family: Inter;
-        // font-size: 12px;
-        // font-style: normal;
-        // font-weight: 600;
-        // line-height: 12px; /* 100% */
-      }
+      @apply flex items-start flex-wrap gap-2 lg:gap-x-6 lg:gap-y-4 text-xs lg:text-sm font-semibold;
+      color: var(--main-grey, #a7a7a7);
     }
   }
 
   .footer-last-text {
     color: var(--main-grey, #a7a7a7);
-
-    // /* Legal/Text */
-    // font-family: Inter;
-    // font-size: 12px;
-    // font-style: normal;
-    // font-weight: 500;
-    // line-height: 16px; /* 133.333% */
+    @apply text-sm font-medium;
   }
 
   .socials {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 0.5rem;
+    @apply inline-flex items-start gap-2;
+  }
+
+  .stores-mobile {
+    @apply inline-flex gap-4 lg:hidden;
+  }
+
+  .blue-bird {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.24);
+    @apply lg:hidden flex items-center p-2;
+
+    .singer-fullname {
+      color: #9d9d9d;
+      // font-family: "Inter";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .song-title {
+      color: #000;
+      // font-family: "Inter";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      letter-spacing: 0.4px;
+    }
   }
 </style>

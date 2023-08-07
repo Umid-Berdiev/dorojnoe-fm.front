@@ -9,10 +9,12 @@ export default defineNuxtConfig({
   modules: [],
   css: ["~/assets/scss/main.scss"],
   plugins: [],
-  components: {
-    global: true,
-    dirs: ["~/components"],
-  },
+  components: [
+    {
+      path: "~/components", // will get any components nested in let's say /components/test too
+      pathPrefix: false,
+    },
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},

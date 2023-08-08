@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import IconBurgerMobile from './icons/iconBurgerMobile.vue';
-import IconLogoMobile from './icons/iconLogoMobile.vue';
-import IconStarMobile from './icons/iconStarMobile.vue';
+import IconBurgerMobile from "./icons/iconBurgerMobile.vue";
+import IconLogoMobile from "./icons/iconLogoMobile.vue";
+import IconStarMobile from "./icons/iconStarMobile.vue";
 
 const open_burger = ref(false);
+
+const emit = defineEmits<{
+  (e: "toggleRadio"): void;
+}>();
 
 // functions
 function toggleBurger() {
   open_burger.value = !open_burger.value;
+}
+function toggleRadio() {
+  emit("toggleRadio");
 }
 </script>
 <template>
@@ -19,7 +26,7 @@ function toggleBurger() {
         <NuxtLink to="/">
           <IconLogoMobile />
         </NuxtLink>
-        <div class="radio-channel flex items-center gap-2">
+        <div class="radio-channel flex items-center gap-2" @click="toggleRadio">
           <div class="channel-icon">
             <IconStarMobile />
           </div>
@@ -37,7 +44,7 @@ function toggleBurger() {
 
     <MobileMenu
       @toggle-burger="toggleBurger"
-      :class="{ 'burger-open': open_burger }"
+      :class="{ 'burger-open': !open_burger }"
     />
   </header>
 </template>

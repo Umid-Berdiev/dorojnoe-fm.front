@@ -1,30 +1,32 @@
 <script lang="ts" setup>
 const sidebarOpen = ref(false);
 
-const toggleSidebar = () => {
+function toggleSidebar() {
   sidebarOpen.value = !sidebarOpen.value;
-};
+}
 </script>
 
 <template>
   <div class="default overflow-hidden block md:flex">
-    <HeaderMobile />
-    <TheSidebar
-      class="hidden md:block"
-      :class="{ 'sidebar-open': sidebarOpen }"
-    />
+    <HeaderMobile @toggle-radio="toggleSidebar" />
+    <TheSidebar class="hidden md:block" />
     <main
       id="main-content"
-      class="mt-20 md:mt-0 min-h-screen w-auto relative p-4"
+      class="mt-20 md:mt-0 min-h-screen w-auto relative"
+      @click="sidebarOpen = false"
     >
-      <img
+      <RadioPatok
+        :class="{ 'ml-0 md:ml-[100%] md:mt-0 mt-[100%]': !sidebarOpen }"
+        @toggle-radio="toggleSidebar"
+      />
+
+      <SidebarToggleButton
         id="sidebarToggleIcon"
         class="hidden md:block toggle-icon absolute cursor-pointer"
-        src="@/assets/icons/SidebarOpenCloseIcon.png"
-        alt="OpenIcon"
         @click="toggleSidebar"
       />
-      <slot />
+
+      <slot @click="toggleSidebar" />
     </main>
     <!-- <TheFooter /> -->
   </div>
@@ -40,9 +42,9 @@ const toggleSidebar = () => {
   }
 }
 
-.sidebar-open {
-  margin-left: -16rem; /* Sidebar ochilganda kengaytirish */
-}
+// .sidebar-open {
+//   margin-left: 100%; /* Sidebar ochilganda kengaytirish */
+// }
 
 .toggle-icon {
   left: -0.9rem;

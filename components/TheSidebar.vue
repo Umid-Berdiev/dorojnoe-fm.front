@@ -7,7 +7,7 @@ import IconArrowDown from "assets/icons/iconArrowDown.vue";
 
 <template>
   <aside
-    class="sidebar bg-[#fff] w-64 p-4 transition-all duration-300 overflow-x-hidden"
+    class="sidebar bg-[#fff] w-64 p-4"
   >
     <div class="h-full pl-6 pr-3 pt-1 overflow-y-auto dark:bg-gray-800">
       <div class="logo mb-4 max-w-[160px] max-h-[138px] mx-auto">

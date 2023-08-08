@@ -1,45 +1,44 @@
 <script setup lang="ts">
-import IconPlay from "assets/icons/iconPlay.vue";
-import IconPause from "assets/icons/iconPause.vue";
-import IconVolmue from "assets/icons/iconVolume.vue";
-import IconVolumeRange from "assets/icons/iconVolumeRange.vue";
-import IconLike from "assets/icons/iconLike.vue";
-import IconLikeActive from "assets/icons/iconLikeActive.vue";
+  import IconPlay from "@/components/icons/iconPlay.vue";
+  import IconPause from "@/components/icons/iconPause.vue";
+  import IconVolumeRange from "@/components/icons/iconVolumeRange.vue";
+  import IconLike from "@/components/icons/iconLike.vue";
+  import IconLikeActive from "@/components/icons/iconLikeActive.vue";
 
-const audioSource =
-  "https://uzpesni.ru/wp-content/uploads/2023/06/Jahongir-Otajonov-Bom-bom.mp3";
+  const audioSource =
+    "https://uzpesni.ru/wp-content/uploads/2023/06/Jahongir-Otajonov-Bom-bom.mp3";
 
-const audioElement = ref<any>(null);
-const isPlaying = ref(false);
-const volume = ref(0.5);
-const like = ref(false);
-const showVolume = ref(false);
-// hooks
-// ####
+  const audioElement = ref<any>(null);
+  const isPlaying = ref(false);
+  const volume = ref(0.5);
+  const like = ref(false);
+  const showVolume = ref(false);
+  // hooks
+  // ####
 
-// functions
-const playPause = () => {
-  if (!audioElement.value) return;
+  // functions
+  const playPause = () => {
+    if (!audioElement.value) return;
 
-  if (isPlaying.value) {
-    audioElement.value.pause();
-  } else {
-    audioElement.value.play();
+    if (isPlaying.value) {
+      audioElement.value.pause();
+    } else {
+      audioElement.value.play();
+    }
+    isPlaying.value = !isPlaying.value;
+  };
+
+  const setVolume = () => {
+    if (!audioElement.value) return;
+    audioElement.value.volume = volume.value;
+  };
+
+  function openVolume() {
+    showVolume.value = !showVolume.value;
   }
-  isPlaying.value = !isPlaying.value;
-};
-
-const setVolume = () => {
-  if (!audioElement.value) return;
-  audioElement.value.volume = volume.value;
-};
-
-function openVolume() {
-  showVolume.value = !showVolume.value;
-}
-function closeVolume() {
-  showVolume.value = false;
-} 
+  function closeVolume() {
+    showVolume.value = false;
+  }
 </script>
 <template>
   <div class="player mb-6">
@@ -63,7 +62,7 @@ function closeVolume() {
       </button>
       <div class="controls flex flex-col justify-between">
         <button type="button" class="volume" @click="openVolume">
-          <IconVolmue />
+          <VolumeIcon />
         </button>
         <div
           v-if="showVolume"
@@ -148,7 +147,4 @@ input[type="range"]::-ms-fill-lower {
 input[type="range"]::-ms-fill-upper {
   background-color: #e3e3e9;
 }
-
-
-
 </style>

@@ -12,7 +12,7 @@ function toggleSidebar() {
     <TheSidebar class="hidden md:block" />
     <main
       id="main-content"
-      class="mt-20 md:mt-0 min-h-screen w-auto relative"
+      class="sm:ml-64 w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
       @click="sidebarOpen = false"
     >
       <RadioPatok
@@ -33,8 +33,10 @@ function toggleSidebar() {
 </template>
 
 <style scoped lang="scss">
-.default {
-  background: #f8f8fa;
+  .default {
+    @apply bg-main-bg-light mx-auto;
+    // max-width: 1280px;
+    position: relative;
 
   .toggle-icon {
     left: -0.9rem;

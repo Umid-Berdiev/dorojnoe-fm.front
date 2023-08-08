@@ -5,18 +5,17 @@
     ListboxOptions,
     ListboxOption,
   } from "@headlessui/vue";
-  import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
   import SimpleBar from "simplebar-vue";
   import "simplebar-vue/dist/simplebar.min.css";
 
   interface TimepickerProps {
-    placeholder?: string;
     modelValue?: string;
+    prefix?: string;
   }
 
   const props = withDefaults(defineProps<TimepickerProps>(), {
     modelValue: "07:00",
-    placeholder: "Select",
+    prefix: "",
   });
 
   const emits = defineEmits<{
@@ -51,16 +50,11 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="timepicker-btn relative text-left sm:text-sm"
+        class="flex align-middle bg-white pl-4 py-2.5 gap-2 text-center text-base w-40 md:w-24"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
+        <span class="pointer-events-none items-center">{{ prefix }}</span>
         <span class="block truncate">{{ selectedOption }}</span>
-        <span
-          class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
-        >
-          <ChevronUpIcon v-if="open" class="h-5 w-5" aria-hidden="true" />
-          <ChevronDownIcon v-else class="h-5 w-5" aria-hidden="true" />
-        </span>
       </ListboxButton>
 
       <Transition
@@ -69,7 +63,7 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50"
+          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
         >
           <SimpleBar data-simplebar-auto-hide="false" class="h-40">
             <ListboxOption
@@ -106,14 +100,3 @@
     </div>
   </Listbox>
 </template>
-
-<style scoped lang="scss">
-  .timepicker-btn {
-    display: flex;
-    padding: 10px 40px 10px 16px;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    @apply text-base;
-  }
-</style>

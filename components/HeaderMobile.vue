@@ -1,112 +1,56 @@
 <script setup lang="ts">
-import IconLogoMobile from "assets/icons/iconLogoMobile.vue";
-import IconBurger from "assets/icons/iconBurger.vue";
-import IconStar from "assets/icons/iconStar.vue";
-import IconClose from "assets/icons/iconClose.vue";
-const burgerMenu = ref(false);
+import IconBurgerMobile from "./icons/iconBurgerMobile.vue";
+import IconLogoMobile from "./icons/iconLogoMobile.vue";
+import IconStarMobile from "./icons/iconStarMobile.vue";
 
-const toggleBurger = () => {
-  burgerMenu.value = !burgerMenu.value;
-};
+const open_burger = ref(false);
+
+const emit = defineEmits<{
+  (e: "toggleRadio"): void;
+}>();
+
+// functions
+function toggleBurger() {
+  open_burger.value = !open_burger.value;
+}
+function toggleRadio() {
+  emit("toggleRadio");
+}
 </script>
 <template>
   <header
-    class="md:hidden fixed top-0 z-10 p-3 border bg-[#fff] flex items-center justify-between w-full"
+    class="fixed top-0 left-0 right-0 z-10 bg-white block w-full border md:hidden p-3"
   >
-    <div class="flex items-center gap-5">
-      <NuxtLink to="/">
-        <IconLogoMobile />
-      </NuxtLink>
-      <div class="flex items-center">
-        <IconStar />
-        <div
-          class="font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-black font-inter text-base"
-        >
-          Москва
+    <div class="flex justify-between items-center">
+      <div class="left flex items-center gap-5">
+        <NuxtLink to="/">
+          <IconLogoMobile />
+        </NuxtLink>
+        <div class="radio-channel flex items-center gap-2" @click="toggleRadio">
+          <div class="channel-icon">
+            <IconStarMobile />
+          </div>
+          <p
+            class="py-1 text-black font-bold font-inter text-base leading-normal"
+          >
+            Москва
+          </p>
         </div>
       </div>
-    </div>
-    <div class="header__burger">
       <button type="button" @click="toggleBurger">
-        <IconBurger />
+        <IconBurgerMobile />
       </button>
     </div>
+
+    <MobileMenu
+      @toggle-burger="toggleBurger"
+      :class="{ 'burger-open': !open_burger }"
+    />
   </header>
-  <nav
-    v-if="burgerMenu"
-    class="px-3 py-7 w-full h-screen bg-white fixed top-0 bottom-0 left-0 right-0 z-20 transform transition-transform translate-x-0"
-    :class="{ '-translate-x-full': !burgerMenu }"
-  >
-    <div
-      class="flex justify-between items-center mb-8 text-black font-bold font-condensed text-2xl uppercase leading-4"
-      @click="burgerMenu = !burgerMenu"
-    >
-      <h1>Меню</h1>
-      <button type="button">
-        <IconClose />
-      </button>
-    </div>
-    <div class="vote relative overflow-hidden rounded-md">
-      <img
-        src="@/public/vote.png"
-        class="w-full min-w-[336px] h-14"
-        alt="vote-img"
-      />
-      <button
-        type="button"
-        class="p-1.5 absolute top-1/4 right-[10%] bg-[#fff] rounded-md text-black font-normal font-inter text-xs leading-normal"
-      >
-        Голосовать
-      </button>
-    </div>
-    <!-- <ul class="space-y-2 font-medium mt-4">
-      <li>
-        <NuxtLink
-          to="/"
-          class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <IconCamera />
-          <span>Радиостанция</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/"
-          class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <IconNewspaper />
-          <span>Новости</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/"
-          class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <IconProgram />
-          <span>Программы</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/"
-          class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <IconGift />
-          <span>Акции и события</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/"
-          class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-        >
-          <IconMedia />
-          <span>Фото и видео</span>
-        </NuxtLink>
-      </li>
-    </ul> -->
-  </nav>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.burger-open {
+  margin-left: -100%; /* Sidebar ochilganda kengaytirish */
+}
+</style>

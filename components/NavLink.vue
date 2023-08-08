@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import IconCamera from 'assets/icons/iconCamera.vue';
-import IconNewspaper from 'assets/icons/iconNewspaper.vue';
-import IconProgram from 'assets/icons/iconProgram.vue';
-import IconGift from 'assets/icons/iconGift.vue';
-import IconMedia from 'assets/icons/iconMedia.vue';
-
+  import IconCamera from "@/components/icons/iconCamera.vue";
+  import IconNewspaper from "@/components/icons/iconNewspaper.vue";
+  import IconProgram from "@/components/icons/iconProgram.vue";
+  import IconGift from "@/components/icons/iconGift.vue";
+  import IconMedia from "@/components/icons/iconMedia.vue";
 </script>
 <template>
   <ul class="space-y-2 font-medium">
     <li>
       <NuxtLink
         to="/"
-        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
         <IconCamera />
         <span>Радиостанция</span>
@@ -20,7 +19,7 @@ import IconMedia from 'assets/icons/iconMedia.vue';
     <li>
       <NuxtLink
         to="/"
-        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
         <IconNewspaper />
         <span>Новости</span>
@@ -29,7 +28,7 @@ import IconMedia from 'assets/icons/iconMedia.vue';
     <li>
       <NuxtLink
         to="/"
-        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
         <IconProgram />
         <span>Программы</span>
@@ -38,7 +37,7 @@ import IconMedia from 'assets/icons/iconMedia.vue';
     <li>
       <NuxtLink
         to="/"
-        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
         <IconGift />
         <span>Акции и события</span>
@@ -47,7 +46,7 @@ import IconMedia from 'assets/icons/iconMedia.vue';
     <li>
       <NuxtLink
         to="/"
-        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+        class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
         <IconMedia />
         <span>Фото и видео</span>

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import IconLogo from "assets/icons/iconLogo.vue";
-import IconStar from "assets/icons/iconStar.vue";
-import IconVote from "assets/icons/iconVote.vue";
-import IconArrowDown from "assets/icons/iconArrowDown.vue";
+  import IconLogo from "@/components/icons/iconLogo.vue";
+  import IconStar from "@/components/icons/iconStar.vue";
+  import IconVote from "@/components/icons/iconVote.vue";
+  import IconArrowDown from "@/components/icons/iconArrowDown.vue";
 </script>
 
 <template>
   <aside
-    class="sidebar bg-[#fff] w-64 p-4 transition-all duration-300 overflow-x-hidden"
+    class="fixed top-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white"
   >
-    <div class="h-full pl-6 pr-3 pt-1 overflow-y-auto dark:bg-gray-800">
+    <div class="h-full pl-6 pr-3 pt-1 overflow-y-auto">
       <div class="logo mb-4 max-w-[160px] max-h-[138px] mx-auto">
         <NuxtLink to="/">
           <IconLogo />

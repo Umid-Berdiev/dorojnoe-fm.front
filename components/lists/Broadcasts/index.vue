@@ -48,7 +48,7 @@
 </script>
 
 <template>
-  <div class="container">
+  <div class="">
     <NuxtList :data="data" />
     <button
       type="button"

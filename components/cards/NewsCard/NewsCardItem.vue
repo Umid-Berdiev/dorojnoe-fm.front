@@ -21,7 +21,7 @@
         "
       />
       <button
-        class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs"
+        class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs lg:text-sm cursor-pointer"
       >
         {{ item.title }}
       </button>

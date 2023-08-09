@@ -1,7 +1,7 @@
 // fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "/css/fonts/roboto-condensed.css";
+@import "/css/fonts/montserrat.css";
+@import "/css/fonts/inter.css";
 
 // tailwind
 @tailwind base;
@@ -39,8 +39,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   tab-size: 4; /* 3 */
-  font-family: Inter; /* 4 */
-  // font-size: 14px; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -53,6 +51,7 @@ html {
 body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
+  font-family: Inter; /* 4 */
 }
 
 /*

@@ -6,30 +6,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: [
-    // [
-    //   "@nuxtjs/google-fonts",
-    //   {
-    //     families: {
-    //       "Roboto Condensed": true,
-    //       download: true,
-    //       inject: true,
-    //     },
-    //   },
-    // ],
-    // [
-    //   "@nuxtjs/google-fonts",
-    //   {
-    //     families: {
-    //       Inter: true,
-    //       download: true,
-    //       inject: true,
-    //     },
-    //   },
-    // ],
-    "nuxt-swiper",
-    // "@nuxtjs/google-fonts",
-  ],
+  modules: ["nuxt-swiper", "nuxt-mapbox"],
   css: ["~/assets/scss/main.scss"],
   plugins: [],
   components: [
@@ -45,14 +22,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  // buildModules: ["@nuxtjs/google-fonts"],
-  // googleFonts: {
-  //   families: {
-  //     "Roboto Condensed": true,
-  //     Inter: true,
-  //   },
-  //   download: true,
-  //   inject: true,
-  //   overwriting: true,
-  // },
+  mapbox: {
+    accessToken:
+      "pk.eyJ1Ijoiam9rZXI4MiIsImEiOiJjbGwyZzg5NHcwNzliM3BxczRsN2pyYjZ0In0.mIPLdKP71H6g3yhb-a-abQ",
+  },
 });

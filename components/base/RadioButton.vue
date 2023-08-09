@@ -1,26 +1,25 @@
 <script lang="ts" setup>
-  defineProps<{
-    data: string;
-  }>();
+  // defineProps<{
+  //   name: string;
+  //   value: string;
+  // }>();
+
+  const attrs = useAttrs();
+  defineOptions({
+    inheritAttrs: false,
+  });
 </script>
 
 <template>
-  <li>
-    <input
-      :id="data"
-      type="radio"
-      name="hosting"
-      value="hosting-small"
-      class="hidden peer"
-      required
-    />
+  <div>
+    <input type="radio" class="hidden peer" v-bind="$attrs" />
     <label
-      :for="data"
+      :for="attrs.id"
       class="flex items-center px-4 py-2.5 bg-white text-black peer-checked:bg-red-500 peer-checked:text-white rounded-43xl cursor-pointer hover:bg-gray-200"
     >
       <div class="block">
-        {{ data }}
+        {{ attrs.value }}
       </div>
     </label>
-  </li>
+  </div>
 </template>

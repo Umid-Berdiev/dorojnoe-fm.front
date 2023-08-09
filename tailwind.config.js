@@ -56,8 +56,9 @@ module.exports = {
         gray: colors.gray,
       },
       fontFamily: {
-        "roboto-condensed": "'Roboto Condensed'",
+        inter: "Inter",
         montserrat: "Montserrat",
+        "roboto-condensed": "'Roboto Condensed'",
       },
       borderRadius: {
         "43xl": "62px",

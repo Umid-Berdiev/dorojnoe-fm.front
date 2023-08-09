@@ -50,6 +50,21 @@
       value: "+7 (495) 799-97-97",
     },
   ]);
+
+  const cities = ref<any>([
+    {
+      name: "Москва",
+      lnglat: [37.395744, 55.644466],
+    },
+    {
+      name: "Санкт-Петербург",
+      lnglat: [30.308611, 59.9375],
+    },
+  ]);
+  const selectedCity = ref({
+    name: "Москва",
+    lnglat: [37.395744, 55.644466],
+  });
 </script>
 
 <template>
@@ -60,32 +75,61 @@
     <IconLogo class="hidden lg:inline-block absolute right-0" />
   </div>
   <div class="mt-6">
-    <SecondaryHeading>Офис в Москве</SecondaryHeading>
+    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+      Офис в Москве
+    </SecondaryHeading>
 
     <NuxtList2 :data="data1" />
   </div>
   <div class="mt-12">
-    <SecondaryHeading>Рекламная служба</SecondaryHeading>
+    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+      Рекламная служба
+    </SecondaryHeading>
 
     <NuxtList2 :data="data2" />
   </div>
   <div class="mt-12">
-    <SecondaryHeading>Программная служба</SecondaryHeading>
+    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+      Программная служба
+    </SecondaryHeading>
 
-    <NuxtList2 :data="data1" class="bg-white p-8 rounded-4xl" />
+    <NuxtList2
+      :data="data1"
+      class="bg-white px-4 py-3 rounded-2xl lg:px-8 lg:py-6 lg:rounded-4xl"
+    />
   </div>
   <div class="mt-12">
-    <SecondaryHeading>Менеджер по региональному развитию сети</SecondaryHeading>
+    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+      Менеджер по региональному развитию сети
+    </SecondaryHeading>
 
     <NuxtList2 :data="data4" />
 
     <hr class="text-gray-200" />
   </div>
   <div class="mt-12">
-    <SecondaryHeading>Программа по заявкам «Добрый вечер»</SecondaryHeading>
+    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+      Программа по заявкам «Добрый вечер»
+    </SecondaryHeading>
 
     <NuxtList2 :data="data5" />
 
     <hr class="text-gray-200" />
+  </div>
+  <div class="relative my-28 h-[542px]">
+    <div class="flex flex-row gap-3">
+      <template v-for="city in cities">
+        <RadioButton
+          :id="city.name"
+          name="city"
+          :value="city.name"
+          :checked="selectedCity?.name === city.name"
+          @input="selectedCity = city"
+        >
+          {{ city.name }}
+        </RadioButton>
+      </template>
+    </div>
+    <TheMap :current-lnglat="selectedCity?.lnglat" />
   </div>
 </template>

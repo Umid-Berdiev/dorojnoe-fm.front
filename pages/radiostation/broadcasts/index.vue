@@ -16,9 +16,7 @@
 <template>
   <TheMobileBreadcrumb />
   <TheBreadcrumb :path="['Радиостанция', 'Сетка вещания']" />
-  <div class="flex">
-    <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
-  </div>
+  <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
   <Swiper
     id="week-carousel"
     :spaceBetween="20"

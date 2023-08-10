@@ -1,5 +1,16 @@
+<script setup lang="ts">
+  const props = withDefaults(
+    defineProps<{
+      placeholder?: string;
+    }>(),
+    {
+      placeholder: "Поиск",
+    }
+  );
+</script>
+
 <template>
-  <div class="relative">
+  <div class="relative h-fit">
     <div
       class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none"
     >
@@ -9,7 +20,7 @@
       type="search"
       id="default-search"
       class="text-base block w-full p-2.5 pl-10 text-gray-900 rounded-3xl bg-white focus:ring-blue-500 focus:border-blue-500"
-      placeholder="Поиск"
+      :placeholder="placeholder"
       required
     />
   </div>

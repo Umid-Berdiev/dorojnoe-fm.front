@@ -11,34 +11,23 @@
 
 <template>
   <div class="primary-heading">
-    <span class="content">
+    <h1 class="content">
       <slot />
-    </span>
+    </h1>
     <div v-if="underlined" class="line bg-firebrick" />
   </div>
 </template>
 
 <style scoped lang="scss">
   .primary-heading {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    @apply inline-flex flex-col items-start gap-3.5 lg:gap-4 mb-6 lg:mb-8;
 
     .content {
-      color: #162826;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      text-transform: uppercase;
-      @apply font-roboto-condensed;
+      @apply font-roboto-condensed text-gray2 text-[1.5rem] font-bold uppercase;
     }
 
     .line {
-      width: 80px;
-      height: 4px;
+      @apply w-18 h-[3px] lg:h-1 lg:w-20;
     }
   }
 </style>

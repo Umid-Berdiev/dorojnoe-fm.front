@@ -116,7 +116,7 @@
 
     <hr class="text-gray-200" />
   </div>
-  <div class="relative my-28 h-[542px]">
+  <div class="relative my-16 lg:my-28 h-[412px] lg:h-[542px]">
     <div class="flex flex-row gap-3">
       <template v-for="city in cities">
         <RadioButton

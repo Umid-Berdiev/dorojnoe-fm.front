@@ -19,44 +19,30 @@
     minZoom: 4,
   });
 
+  watchEffect(() => {
+    if (mapRef.value) {
+      mapRef.value.setStyle(mapboxOptions.style);
+      mapRef.value.setZoom(mapboxOptions.zoom);
+      mapRef.value.setCenter(mapboxOptions.center);
+      mapRef.value.setMinZoom(mapboxOptions.minZoom);
+    }
+  });
+
   watch(props, (newVal) => {
     if (newVal.currentLnglat && mapboxInstance.value) {
       // mapboxOptions.value.center = props.currentLnglat;
       console.log(mapboxInstance.value);
 
-      mapboxInstance.value.setLayoutProperty("country-label", "text-field", [
-        "get",
-        "name_ru",
-      ]);
       mapboxInstance.value.flyTo({
         center: newVal.currentLnglat,
         speed: 1, // default: 1.2
       });
     }
   });
-
-  function setLocale(event: MouseEvent) {
-    const language = "ru";
-    // Use setLayoutProperty to set the value of a layout property in a style layer.
-    // The three arguments are the id of the layer, the name of the layout property,
-    // and the new property value.
-    mapboxInstance.value.mapInstance.setLayoutProperty(
-      "country-label",
-      "text-field",
-      ["get", `name_${language}`]
-    );
-  }
 </script>
 
 <template>
-  <MapboxMap
-    map-id="mapbox"
-    ref="mapbox"
-    :options="mapboxOptions"
-    @load="(mapInstance) => (mapboxInstance = mapInstance)"
-  >
-    <MapboxDefaultMarker marker-id="marker1" :lnglat="currentLnglat" />
-  </MapboxMap>
+  <div id="mapbox" ref="mapbox"></div>
 </template>
 
 <style lang="scss">

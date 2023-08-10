@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <section class="sm:ml-64 bottom-0 bg-inherit mt-20 md:mt-28">
+  <section class="sm:ml-64 bottom-0 bg-inherit mt-20 lg:mt-28">
     <div class="px-3 py-4 lg:px-8 lg:py-4 bg-[#eaeaef]">
       <Swiper
         id="carousel"

@@ -21,7 +21,7 @@
   <PrimaryHeading class="max-w-[656px]">
     Скачивайте мобильное приложение «Дорожного радио» для iOS и Android!
   </PrimaryHeading>
-  <div class="max-w-[656px] mt-2 lg:mt-0 lg:mb-12">
+  <div class="max-w-[656px] mt-2 lg:mt-0 mb-12">
     <div class="flex mb-8">
       <img
         srcset="

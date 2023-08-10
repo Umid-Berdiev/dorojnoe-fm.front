@@ -68,12 +68,6 @@ module.exports = {
         18: "4.5rem",
       },
     },
-    // fontSize: {
-    //   sm: "1rem",
-    //   base: "1.14rem",
-    //   xs: "0.86rem",
-    //   "5xl": "1.71rem",
-    // },
     fontSize: {
       xs: "0.625rem",
       sm: "0.75rem",

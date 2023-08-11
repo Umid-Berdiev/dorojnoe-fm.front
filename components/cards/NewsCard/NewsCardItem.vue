@@ -16,7 +16,7 @@
 <template>
   <div class="news-card-item rounded-2xl">
     <NuxtLink to="#" class="relative">
-      <img :srcset="`${item.image} 1x, ${item.image} 2x`" />
+      <img :srcset="`${item.image} 1x, ${item.image} 2x`" class="w-full" />
       <button
         class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs lg:text-sm cursor-pointer font-inter"
       >

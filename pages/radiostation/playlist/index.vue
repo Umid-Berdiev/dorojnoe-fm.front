@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import PrimaryHeading from "@/components/headings/PrimaryHeading.vue";
   import CustomSelect from "@/components/forms/CustomSelect.vue";
   import VDatePicker from "@/components/forms/VDatePicker.vue";
   import VTimePicker from "@/components/forms/VTimePicker.vue";

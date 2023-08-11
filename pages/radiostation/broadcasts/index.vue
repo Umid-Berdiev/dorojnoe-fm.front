@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-  import PrimaryHeading from "@/components/headings/PrimaryHeading.vue";
   import NewsCard from "@/components/cards/NewsCard/index.vue";
 
   const week = ref([

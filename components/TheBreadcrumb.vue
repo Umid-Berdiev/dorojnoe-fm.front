@@ -17,18 +17,21 @@
           Главная
         </NuxtLink>
       </li>
-      <li>
+      <li v-if="path[0]">
         <div class="flex items-center">
           /
           <NuxtLink
             to="/"
-            class="ml-1 text-base text-gray-700 hover:text-blue-600 md:ml-2"
+            :class="[
+              'ml-1 text-base text-gray-700 hover:text-blue-600 md:ml-2',
+              path.length === 1 && 'text-main-grey',
+            ]"
           >
             {{ path[0] }}
           </NuxtLink>
         </div>
       </li>
-      <li aria-current="page">
+      <li aria-current="page" v-if="path[1]">
         <div class="flex items-center">
           /
           <span class="ml-1 text-base text-main-grey md:ml-2">

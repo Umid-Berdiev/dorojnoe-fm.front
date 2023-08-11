@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { getImageUrl } from "@/utils/helpers";
+
   interface NewsItemProps {
     title: string;
     body: string;
@@ -14,14 +16,9 @@
 <template>
   <div class="news-card-item rounded-2xl">
     <NuxtLink to="#" class="relative">
-      <img
-        srcset="
-          @/assets/images/news_cover_photo_1.png 1x,
-          @/assets/images/news_cover_photo_1.png 2x
-        "
-      />
+      <img :srcset="`${item.image} 1x, ${item.image} 2x`" />
       <button
-        class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs lg:text-sm cursor-pointer"
+        class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs lg:text-sm cursor-pointer font-inter"
       >
         {{ item.title }}
       </button>
@@ -46,7 +43,7 @@
 <style scoped lang="scss">
   .news-card-item {
     .news-body {
-      @apply text-lg font-medium leading-6 font-roboto-condensed;
+      @apply text-base lg:text-lg font-medium leading-6 font-roboto-condensed;
     }
 
     img {

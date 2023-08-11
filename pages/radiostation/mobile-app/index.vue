@@ -5,13 +5,6 @@
   import "swiper/css";
   import "swiper/css/navigation";
 
-  const mobileAppImages = [
-    "@/assets/images/mobile_app_slider_1.png 1x, @/assets/images/mobile_app_slider_1.png 2x",
-    "@/assets/images/mobile_app_slider_2.png 1x, @/assets/images/mobile_app_slider_2.png 2x",
-    "@/assets/images/mobile_app_slider_1.png 1x, @/assets/images/mobile_app_slider_1.png 2x",
-    "@/assets/images/mobile_app_slider_2.png 1x, @/assets/images/mobile_app_slider_2.png 2x",
-  ];
-
   const modules = [Navigation];
 </script>
 

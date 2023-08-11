@@ -22,7 +22,9 @@
           item.subtitle
         }}</span>
       </div>
-      <div class="ml-auto text-gray-900">{{ item.right_text }}</div>
+      <div class="ml-auto text-gray-900 text-sm lg:text-base">
+        {{ item.right_text }}
+      </div>
     </div>
   </li>
 </template>

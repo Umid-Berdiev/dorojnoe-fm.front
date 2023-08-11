@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ["nuxt-swiper", "nuxt-mapbox"],
+  modules: ["nuxt-swiper", "nuxt-mapbox", "@nuxtjs/google-fonts"],
   css: ["~/assets/scss/main.scss"],
   plugins: [],
   components: [
@@ -25,5 +25,13 @@ export default defineNuxtConfig({
   mapbox: {
     accessToken:
       "pk.eyJ1Ijoiam9rZXI4MiIsImEiOiJjbGwyZzg5NHcwNzliM3BxczRsN2pyYjZ0In0.mIPLdKP71H6g3yhb-a-abQ",
+  },
+  googleFonts: {
+    families: {
+      Inter: [400, 500, 600, 700],
+      Montserrat: [400, 500, 600, 700, 900],
+      "Roboto Condensed": [400, 500, 600, 700],
+    },
+    display: "swap", // 'auto' | 'block' | 'swap' | 'fallback' | 'optional'
   },
 });

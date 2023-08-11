@@ -19,7 +19,7 @@
   <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
   <Swiper
     id="week-carousel"
-    :spaceBetween="20"
+    :spaceBetween="12"
     :slidesPerView="3"
     :breakpoints="{
       '768': {

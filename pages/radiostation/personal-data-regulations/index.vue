@@ -1,5 +1,5 @@
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb
     :path="['Радиостанция', 'Положения об обработке персональных данных']"
   />

@@ -89,7 +89,7 @@
 
 #news-page-carousel1 {
   .swiper-wrapper {
-    align-items: center !important;
+    align-items: start !important;
     justify-content: space-between;
 
     .swiper-slide {
@@ -110,6 +110,94 @@
       height: 100%;
       // object-fit: scale-down;
       @apply rounded-[28px] lg:rounded-2xl w-[194px] h-[300px] lg:w-[313px] lg:h-[380px];
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-size: 28px;
+    @apply bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
+  }
+
+  .swiper-button-prev {
+    background-image: url("/assets/icons/arrow-left.svg");
+  }
+
+  .swiper-button-next {
+    background-image: url("/assets/icons/arrow-right.svg");
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: "";
+  }
+}
+
+#news-page-carousel2 {
+  .swiper-wrapper {
+    align-items: center !important;
+    justify-content: space-between;
+
+    .swiper-slide {
+      width: 100% !important;
+      max-width: 200px;
+      text-align: center;
+
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-size: 28px;
+    @apply bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
+  }
+
+  .swiper-button-prev {
+    background-image: url("/assets/icons/arrow-left.svg");
+  }
+
+  .swiper-button-next {
+    background-image: url("/assets/icons/arrow-right.svg");
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: "";
+  }
+}
+
+#presenter-page-carousel1 {
+  .swiper-wrapper {
+    align-items: center !important;
+    justify-content: space-between;
+
+    .swiper-slide {
+      width: 100% !important;
+      max-width: 673px;
+      text-align: center;
+
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
     }
   }
 

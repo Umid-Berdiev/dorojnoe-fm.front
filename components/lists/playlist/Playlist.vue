@@ -1,7 +1,4 @@
 <script setup lang="ts">
-  import PlaylistItem from "./PlaylistItem.vue";
-  import PrimaryButton from "@/components/buttons/PrimaryButton.vue";
-
   //
 </script>
 
@@ -12,7 +9,7 @@
         <PlaylistItem />
       </template>
     </ul>
-    <PrimaryButton> Больше результатов </PrimaryButton>
+    <PrimaryButtonRed> Больше результатов </PrimaryButtonRed>
   </div>
 </template>
 

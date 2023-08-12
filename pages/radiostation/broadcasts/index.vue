@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'Сетка вещания']" />
   <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
   <Swiper

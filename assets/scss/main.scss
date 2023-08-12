@@ -8,6 +8,10 @@
 @tailwind components;
 @tailwind utilities;
 
+// Import Swiper styles
+@import "swiper/css";
+@import "swiper/css/navigation";
+
 // @import "global";
 @import "custom";
 

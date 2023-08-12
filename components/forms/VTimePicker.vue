@@ -50,7 +50,7 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="flex align-middle bg-white pl-4 py-2.5 gap-2 text-center text-base w-40 md:w-24"
+        class="flex align-middle bg-white pl-4 py-2.5 gap-2 text-center w-40 md:w-24 text-sm lg:text-base font-inter leading-5"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="pointer-events-none items-center">{{ prefix }}</span>
@@ -63,7 +63,7 @@
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+          class="text-sm lg:text-base font-inter absolute mt-1 max-h-60 w-full overflow-auto rounded-b-3xl bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <SimpleBar data-simplebar-auto-hide="false" class="h-40">
             <ListboxOption
@@ -84,14 +84,9 @@
                     selected ? 'font-medium' : 'font-normal',
                     'block truncate',
                   ]"
-                  >{{ option }}</span
                 >
-                <!-- <span
-                v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600"
-              >
-                <CheckIcon class="h-5 w-5" aria-hidden="true" />
-              </span> -->
+                  {{ option }}
+                </span>
               </li>
             </ListboxOption>
           </SimpleBar>

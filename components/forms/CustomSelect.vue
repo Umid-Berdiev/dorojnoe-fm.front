@@ -46,7 +46,7 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="custom-select-btn relative text-left sm:text-sm w-full"
+        class="custom-select-btn"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="block truncate">{{
@@ -75,6 +75,7 @@
               :key="option[asLabel]"
               :value="option[asValue]"
               as="template"
+              class="text-sm lg:text-base font-inter"
             >
               <li
                 :class="[
@@ -106,12 +107,7 @@
 
 <style scoped lang="scss">
   .custom-select-btn {
-    display: flex;
-    padding: 10px 40px 10px 16px;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    @apply text-base;
+    @apply flex py-2.5 pl-4 pr-8 items-center gap-2 bg-white font-inter relative text-left text-sm lg:text-base w-full leading-5;
   }
 
   .options-wrapper {

@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'Плейлист']" />
   <div class="flex">
     <PrimaryHeading underlined>Плейлист</PrimaryHeading>

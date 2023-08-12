@@ -40,6 +40,10 @@ module.exports = {
       center: true,
     },
     extend: {
+      borderRadius: {
+        "43xl": "62px",
+        "4xl": "2rem", // 32px
+      },
       colors: {
         whitesmoke: "#eaeaef",
         firebrick: "#da3832",
@@ -59,10 +63,6 @@ module.exports = {
         inter: "Inter",
         montserrat: "Montserrat",
         "roboto-condensed": "'Roboto Condensed'",
-      },
-      borderRadius: {
-        "43xl": "62px",
-        "4xl": "2rem", // 32px
       },
       spacing: {
         18: "4.5rem",

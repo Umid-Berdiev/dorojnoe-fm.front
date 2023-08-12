@@ -1,5 +1,5 @@
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'О радиостанции']" />
   <PrimaryHeading underlined>О радиостанции</PrimaryHeading>
   <SecondaryHeading> Дорожное радио Вместе в пути! </SecondaryHeading>

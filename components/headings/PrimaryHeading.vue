@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="primary-heading">
+  <div class="primary-heading text-[1.5rem] mb-6 lg:mb-8">
     <h1 class="content">
       <slot />
     </h1>
@@ -20,10 +20,10 @@
 
 <style scoped lang="scss">
   .primary-heading {
-    @apply inline-flex flex-col items-start gap-3.5 lg:gap-4 mb-6 lg:mb-8;
+    @apply inline-flex flex-col items-start gap-3.5 lg:gap-4;
 
     .content {
-      @apply font-roboto-condensed text-gray2 text-[1.5rem] font-bold uppercase;
+      @apply font-roboto-condensed text-gray2 font-bold uppercase;
     }
 
     .line {

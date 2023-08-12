@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'Рекламодателям']" />
   <PrimaryHeading underlined>Рекламодателям</PrimaryHeading>
   <div class="text-gray2 leading-6">

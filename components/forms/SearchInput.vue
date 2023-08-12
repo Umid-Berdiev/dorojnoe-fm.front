@@ -19,7 +19,6 @@
     <input
       type="search"
       id="default-search"
-      class="text-base block w-full p-2.5 pl-10 text-gray-900 rounded-3xl bg-white focus:ring-blue-500 focus:border-blue-500"
       :placeholder="placeholder"
       required
     />
@@ -29,6 +28,7 @@
 <style scoped lang="scss">
   #default-search {
     color: var(--main-grey, #a7a7a7);
-    border: 1px solid #dbdbdb;
+    // border: 1px solid #dbdbdb;
+    @apply border border-[#dbdbdb] text-sm lg:text-base block w-full p-2.5 pl-10 text-gray-900 rounded-3xl bg-white focus:ring-blue-500 focus:border-blue-500 font-inter;
   }
 </style>

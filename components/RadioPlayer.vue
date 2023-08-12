@@ -48,7 +48,7 @@
         class="max-w-[200px] max-h-[200px] relative mb-3.5"
         @click="playPause"
       >
-        <img src="@/public/alisa.jpg" class="w-full h-full" alt="" />
+        <!-- <img src="@/public/alisa.jpg" class="w-full h-full" alt="" /> -->
         <div
           class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
         >

@@ -1,12 +1,5 @@
 <script setup lang="ts">
-  import { getImageUrl } from "@/utils/helpers";
-
-  interface NewsItemProps {
-    title: string;
-    body: string;
-    image: string;
-    date: string;
-  }
+  import { NewsItemProps } from "utils/interfaces";
 
   defineProps<{
     item: NewsItemProps;
@@ -14,13 +7,16 @@
 </script>
 
 <template>
-  <div class="news-card-item rounded-2xl">
-    <NuxtLink to="#" class="relative">
-      <img :srcset="`${item.image} 1x, ${item.image} 2x`" class="w-full" />
+  <div class="news-card-item">
+    <NuxtLink :to="`/news/${item.id}`" class="relative">
+      <img
+        :srcset="`${item.image} 1x, ${item.image} 2x`"
+        class="w-full rounded-2xl"
+      />
       <button
         class="absolute left-4 bottom-4 bg-black rounded-3xl text-white px-2 py-1.5 text-xs lg:text-sm cursor-pointer font-inter"
       >
-        {{ item.title }}
+        {{ item.category }}
       </button>
     </NuxtLink>
     <div class="mt-4">
@@ -31,9 +27,9 @@
           {{ item.date }}
         </div>
       </div>
-      <NuxtLink to="/">
+      <NuxtLink :to="`/news/${item.id}`">
         <span class="news-body">
-          {{ item.body }}
+          {{ item.title }}
         </span>
       </NuxtLink>
     </div>
@@ -44,10 +40,6 @@
   .news-card-item {
     .news-body {
       @apply text-base lg:text-lg font-medium leading-6 font-roboto-condensed;
-    }
-
-    img {
-      width: -webkit-fill-available;
     }
   }
 </style>

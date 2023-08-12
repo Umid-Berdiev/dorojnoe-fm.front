@@ -34,9 +34,11 @@
       <li aria-current="page" v-if="path[1]">
         <div class="flex items-center">
           /
-          <span class="ml-1 text-base text-main-grey md:ml-2">
+          <p
+            class="ml-1 text-base text-main-grey md:ml-2 lg:max-w-[300px] truncate"
+          >
             {{ path[1] }}
-          </span>
+          </p>
         </div>
       </li>
     </ol>

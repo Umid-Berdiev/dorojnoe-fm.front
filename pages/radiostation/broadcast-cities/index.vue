@@ -29,7 +29,7 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'Города вещания']" />
   <div class="flex flex-col lg:flex-row mb-8 lg:mb-0">
     <PrimaryHeading underlined>Города вещания</PrimaryHeading>

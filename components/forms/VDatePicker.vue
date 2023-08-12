@@ -52,13 +52,14 @@
       :popover="{ visibility: 'click' }"
       @popover-will-show="isOpen = true"
       @popover-will-hide="isOpen = false"
+      class="relative"
     >
       <template #default="{ togglePopover, inputValue }">
         <button class="datepicker-btn" color="white" @click="togglePopover">
           <!-- :ui="{ rounded: 'rounded-full' }" -->
           <!-- class="px-4 py-2 ring-transparent shadow-none font-normal hover:bg-white" -->
           <span>{{ inputValue }}</span>
-          <span class="pointer-events-none flex items-center ml-auto">
+          <span class="pointer-events-none">
             <ChevronUpIcon v-if="isOpen" class="h-5 w-5" aria-hidden="true" />
             <ChevronDownIcon v-else class="h-5 w-5" aria-hidden="true" />
           </span>
@@ -70,9 +71,21 @@
 
 <style scoped lang="scss">
   .datepicker-btn {
-    padding: 10px 16px 8px 16px;
-    // border-radius: 62px;
-
-    @apply flex bg-white rounded-3xl gap-2 ring-transparent hover:bg-white shadow-none text-base items-center;
+    @apply inline-flex 
+    justify-between
+    bg-white 
+    rounded-3xl 
+    gap-2 
+    ring-transparent 
+    hover:bg-white 
+    shadow-none 
+    text-sm 
+    lg:text-base 
+    items-center 
+    font-inter 
+    pl-4 
+    pr-2 
+    py-2
+    min-h-[38px];
   }
 </style>

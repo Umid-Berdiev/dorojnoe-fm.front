@@ -1,15 +1,11 @@
 <script setup lang="ts">
   import { Navigation } from "swiper/modules";
 
-  // Import Swiper styles
-  import "swiper/css";
-  import "swiper/css/navigation";
-
   const modules = [Navigation];
 </script>
 
 <template>
-  <TheMobileBreadcrumb />
+  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
   <TheBreadcrumb :path="['Радиостанция', 'Мобильное приложение']" />
   <PrimaryHeading class="max-w-[656px]">
     Скачивайте мобильное приложение «Дорожного радио» для iOS и Android!

@@ -1,29 +1,17 @@
 <script lang="ts" setup>
-  function onCloseSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const sidebarOpenIcon = document.getElementById("sidebarOpenIcon");
-    const mainContent = document.getElementById("mainContent");
-
-    if (sidebar) {
-      sidebar.classList.remove("animate__fadeInLeft");
-      sidebar.classList.add("animate__fadeOutLeft");
-      sidebarOpenIcon?.classList.remove("d-none");
-      if (mainContent)
-        mainContent.className = "col-12 animate__animated animate__fadeOutLeft";
-    }
-  }
+  const sidebarOpen = ref(false);
 </script>
 
 <template>
   <div class="default">
-    <TheSidebar @toggle-sidebar="onCloseSidebar" />
+    <TheSidebar />
     <main
       id="main-content"
       class="sm:ml-64 w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
     >
       <slot />
     </main>
-    <TheFooter />
+    <!-- <TheFooter /> -->
   </div>
 </template>
 
@@ -36,7 +24,16 @@
     .toggle-icon {
       left: -0.9rem;
       top: 10rem;
-      z-index: 1000;
     }
+  }
+
+  .sidebar-open {
+    margin-left: -16rem; /* Sidebar ochilganda kengaytirish */
+  }
+
+  .toggle-icon {
+    left: -0.9rem;
+    top: 10rem;
+    transition: left 0.3s ease-in-out;
   }
 </style>

@@ -74,7 +74,7 @@
               <div class="modalContent relative">
                 <button
                   type="button"
-                  class="absolute top-8 right-16 bg-transparent text-white p-0 border-0 focus-visible:outline-none"
+                  class="absolute top-8 right-16 bg-transparent text-white p-0 border-0 focus-visible:outline-none cursor-pointer"
                   @click="closeModal"
                 >
                   <XMarkIcon class="w-14 h-14" />
@@ -121,10 +121,12 @@
   .modalContent {
     position: relative;
     height: 100%;
-    padding: 4rem;
+    padding: 2rem 4rem;
 
     .gallerySwiper1 {
-      top: 15%;
+      // top: 15%;
+      position: absolute;
+      top: 10%;
 
       .swiper-wrapper {
         align-items: center !important;
@@ -143,7 +145,7 @@
 
         .swiper-slide img {
           display: block;
-          width: 70%;
+          width: 60%;
           height: 100%;
         }
       }
@@ -168,7 +170,8 @@
     }
 
     .gallerySwiper2 {
-      bottom: -25%;
+      position: absolute;
+      bottom: 2rem;
 
       .swiper-wrapper {
         align-items: center !important;

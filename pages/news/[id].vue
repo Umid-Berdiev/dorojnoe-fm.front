@@ -1,10 +1,6 @@
 <script setup lang="ts">
   import { newsCategories } from "@/utils/mockdata/news";
 
-  const props = defineProps<{
-    // id: number | string;
-  }>();
-
   const route = useRoute();
   const paramsID = route.params.id;
 
@@ -114,7 +110,12 @@
           }"
         >
           <SwiperSlide v-for="item in newsCategories">
-            <RadioButton :id="item" name="category" :value="item" />
+            <RadioButton
+              :id="item"
+              name="category"
+              :value="item"
+              :label="item"
+            />
           </SwiperSlide>
         </Swiper>
       </div>

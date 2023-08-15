@@ -39,7 +39,7 @@
       }"
     >
       <SwiperSlide v-for="(item, itemIndex) in newsCategories">
-        <RadioButton :id="item" name="category" :value="item" />
+        <RadioButton :id="item" name="category" :value="item" :label="item" />
       </SwiperSlide>
     </Swiper>
   </div>

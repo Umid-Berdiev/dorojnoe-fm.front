@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="primary-heading text-[1.5rem] mb-6 lg:mb-8">
+  <div class="primary-heading text-[1.375rem] lg:text-[1.5rem] mb-6 lg:mb-8">
     <h1 class="content">
       <slot />
     </h1>

@@ -19,7 +19,7 @@
     <TheSidebar @toggle-sidebar="onCloseSidebar" />
     <main
       id="main-content"
-      class="sm:ml-64 w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
+      class="lg:ml-[280px] w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
     >
       <slot />
     </main>

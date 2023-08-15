@@ -32,7 +32,7 @@
     }"
   >
     <SwiperSlide v-for="day in week">
-      <RadioButton :id="day" name="day" :value="day" />
+      <RadioButton :id="day" name="day" :label="day" :value="day" />
     </SwiperSlide>
   </Swiper>
   <Broadcasts />

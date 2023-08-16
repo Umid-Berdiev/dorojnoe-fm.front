@@ -17,7 +17,7 @@
   <!-- news categories -->
   <div class="hidden lg:flex lg:flex-wrap lg:gap-x-3 lg:gap-y-4 lg:mb-12">
     <template v-for="(item, itemIndex) in newsCategories" :key="itemIndex">
-      <RadioButton :id="item" name="category" :value="item">
+      <RadioButton class="bg-white" :id="item" name="category" :value="item">
         {{ item }}
       </RadioButton>
     </template>

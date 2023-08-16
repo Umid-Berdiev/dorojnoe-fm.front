@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     families: {
       Inter: [400, 500, 600, 700],
       Montserrat: [400, 500, 600, 700, 900],
+      Oswald: [400, 500, 600, 700],
       "Roboto Condensed": [400, 500, 600, 700],
     },
     display: "swap", // 'auto' | 'block' | 'swap' | 'fallback' | 'optional'

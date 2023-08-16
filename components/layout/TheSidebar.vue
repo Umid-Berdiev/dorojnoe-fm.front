@@ -3,6 +3,7 @@
   import IconStar from "@/components/icons/iconStar.vue";
   import IconVote from "@/components/icons/iconVote.vue";
   import IconArrowDown from "@/components/icons/iconArrowDown.vue";
+  import { newsCategories } from "@/utils/mockdata/news";
 
   const isSidebarOpen = ref(false);
 
@@ -13,7 +14,7 @@
 
 <template>
   <aside
-    class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white"
+    class="sidebar-wrapper"
     :class="{ 'w-screen': isSidebarOpen, 'w-[280px]': !isSidebarOpen }"
   >
     <ChevronDoubleLeftIcon
@@ -61,31 +62,86 @@
         <NavLink />
       </div>
       <div v-if="isSidebarOpen" class="flex-auto inline-flex w-full">
-        <div class="flex-auto">asdasdasd</div>
-        <div class="right-block">sdzxczxczxc</div>
+        <div class="center-block">
+          <!-- advertising -->
+          <div class="advertising-block">
+            <img
+              srcset="/assets/images/BG5.png 1x, /assets/images/BG5.png 2x"
+              alt="Advertising image"
+              class="w-full"
+            />
+          </div>
+          <SecondaryHeading class="mt-8">Потоки</SecondaryHeading>
+          <StreamBlock />
+          <button
+            class="mt-7 rounded-43xl bg-main-bg-light py-2.5 px-4 font-inter text-base font-medium leading-[18px]"
+          >
+            Плейлист
+          </button>
+          <SecondaryHeading class="mt-16">Подкасты</SecondaryHeading>
+          <!-- news categories -->
+          <div class="hidden lg:flex lg:flex-wrap lg:gap-3">
+            <template
+              v-for="(item, itemIndex) in newsCategories"
+              :key="itemIndex"
+            >
+              <RadioButton
+                class="bg-main-bg-light"
+                :id="item"
+                name="category"
+                :value="item"
+              >
+                {{ item }}
+              </RadioButton>
+            </template>
+          </div>
+          <!-- podcasts -->
+          <PodcastBlock class="mt-16" />
+          <button
+            class="mt-7 rounded-43xl bg-main-bg-light py-2.5 px-4 font-inter text-base font-medium leading-[18px]"
+          >
+            Все
+          </button>
+        </div>
+        <div class="right-block">
+          <img
+            srcset="/assets/images/BG4.png 1x, /assets/images/BG4.png 2x"
+            alt="Advertising image"
+            class="w-full"
+          />
+        </div>
       </div>
     </div>
   </aside>
 </template>
 
 <style lang="scss">
-  .chevron-double-right-icon {
-    right: -3.9rem;
-    top: 25rem;
-    transition: left 0.3s ease-in-out;
-  }
+  @import "animate.css";
 
-  .chevron-double-left-icon {
-    right: 348px;
-    top: 25rem;
-    transition: left 0.3s ease-in-out;
-  }
+  .sidebar-wrapper {
+    transition: width 1s ease;
+    @apply hidden lg:block fixed top-0 left-0 z-40 h-screen bg-white;
 
-  .left-block {
-    @apply pt-4 pr-4 pl-6 lg:w-[280px];
-  }
+    .chevron-double-right-icon {
+      right: -3.9rem;
+      top: 25rem;
+    }
 
-  .right-block {
-    @apply bg-main-bg-light flex flex-col items-center shrink-0 lg:w-[348px] p-8 ml-auto;
+    .chevron-double-left-icon {
+      right: 348px;
+      top: 25rem;
+    }
+
+    .left-block {
+      @apply pt-4 pr-4 pl-6 lg:w-[280px];
+    }
+
+    .right-block {
+      @apply bg-main-bg-light flex flex-col items-start shrink-0 lg:w-[348px] p-8 ml-auto;
+    }
+
+    .center-block {
+      @apply flex-auto p-8;
+    }
   }
 </style>

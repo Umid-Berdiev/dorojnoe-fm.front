@@ -62,6 +62,7 @@ module.exports = {
       fontFamily: {
         inter: "Inter",
         montserrat: "Montserrat",
+        oswald: "Oswald",
         "roboto-condensed": "'Roboto Condensed'",
       },
       spacing: {

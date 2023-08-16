@@ -1,10 +1,7 @@
 <script setup lang="ts">
-  import IconCamera from "@/components/icons/iconCamera.vue";
-  import IconNewspaper from "@/components/icons/iconNewspaper.vue";
-  import IconProgram from "@/components/icons/iconProgram.vue";
-  import IconGift from "@/components/icons/iconGift.vue";
-  import IconMedia from "@/components/icons/iconMedia.vue";
+  //
 </script>
+
 <template>
   <ul class="space-y-2 font-medium">
     <li>
@@ -12,7 +9,7 @@
         to="/"
         class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
-        <IconCamera />
+        <RadioIcon />
         <span>Радиостанция</span>
       </NuxtLink>
     </li>
@@ -21,7 +18,7 @@
         to="/"
         class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
-        <IconNewspaper />
+        <NewsIcon />
         <span>Новости</span>
       </NuxtLink>
     </li>
@@ -30,7 +27,7 @@
         to="/"
         class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
-        <IconProgram />
+        <ProgramsIcon />
         <span>Программы</span>
       </NuxtLink>
     </li>
@@ -39,7 +36,7 @@
         to="/"
         class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
-        <IconGift />
+        <GiftIcon />
         <span>Акции и события</span>
       </NuxtLink>
     </li>
@@ -48,7 +45,7 @@
         to="/"
         class="flex gap-[18px] items-center px-2.5 py-2 text-gray-900 rounded-lg"
       >
-        <IconMedia />
+        <ImageIcon />
         <span>Фото и видео</span>
       </NuxtLink>
     </li>

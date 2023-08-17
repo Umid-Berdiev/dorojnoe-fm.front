@@ -74,10 +74,10 @@
               <div class="modalContent relative">
                 <button
                   type="button"
-                  class="absolute top-8 right-16 bg-transparent text-white p-0 border-0 focus-visible:outline-none cursor-pointer"
+                  class="absolute top-4 lg:top-8 right-4 lg:right-16 bg-transparent text-white p-0 border-0 focus-visible:outline-none cursor-pointer"
                   @click="closeModal"
                 >
-                  <XMarkIcon class="w-14 h-14" />
+                  <XMarkIcon class="w-10 h-10 lg:w-14 lg:h-14" />
                 </button>
                 <Swiper
                   :style="{
@@ -85,8 +85,9 @@
                     '--swiper-pagination-color': '#fff',
                   }"
                   :initialSlide="activeIndex"
-                  :spaceBetween="10"
                   :navigation="true"
+                  :slidesPerView="1"
+                  :spaceBetween="12"
                   :thumbs="{ swiper: thumbsSwiper }"
                   :modules="modules"
                   class="gallerySwiper1"
@@ -97,9 +98,23 @@
                 </Swiper>
                 <Swiper
                   @swiper="setThumbsSwiper"
-                  :spaceBetween="24"
-                  slidesPerView="auto"
-                  :freeMode="true"
+                  :slidesPerView="3"
+                  :spaceBetween="12"
+                  :breakpoints="{
+                    // '640': {
+                    //   slidesPerView: 2,
+                    //   spaceBetween: 20,
+                    // },
+                    // '768': {
+                    //   slidesPerView: 4,
+                    //   spaceBetween: 40,
+                    // },
+                    '1280': {
+                      slidesPerView: 'auto',
+                      spaceBetween: 24,
+                    },
+                  }"
+                  :freeMode="false"
                   :watchSlidesProgress="true"
                   :modules="modules"
                   class="gallerySwiper2"
@@ -119,14 +134,10 @@
 
 <style lang="scss">
   .modalContent {
-    position: relative;
-    height: 100%;
-    padding: 2rem 4rem;
+    @apply relative h-full lg:py-8;
 
     .gallerySwiper1 {
-      // top: 15%;
-      position: absolute;
-      top: 10%;
+      @apply absolute top-1/2 transform -translate-y-1/2;
 
       .swiper-wrapper {
         align-items: center !important;
@@ -134,56 +145,65 @@
 
         .swiper-slide {
           width: 100% !important;
-          max-width: 100%;
-          text-align: center;
-
-          /* Center slide text vertically */
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @apply max-w-full text-center flex justify-center items-center;
         }
 
         .swiper-slide img {
-          display: block;
-          width: 100%;
-          max-width: 758px;
-          height: 100%;
-          max-height: 440px;
-          border-radius: 1.5rem;
+          // display: block;
+          // width: 100%;
+          // max-width: 758px;
+          // height: 100%;
+          // max-height: 440px;
+          // border-radius: 1.5rem;
+
+          @apply block w-full max-w-[320px] lg:max-w-[758px] h-[200px] lg:h-[440px] rounded-3xl;
         }
+      }
+
+      .swiper-button-prev {
+        left: 5rem;
+      }
+
+      .swiper-button-next {
+        right: 5rem;
       }
 
       .swiper-button-next,
       .swiper-button-prev {
-        background-size: 1rem;
+        // background-size: 1rem;
+        @apply hidden lg:flex;
       }
     }
 
     .gallerySwiper2 {
-      position: absolute;
-      bottom: 2rem;
+      // position: absolute;
+      // bottom: 2rem;
+      @apply absolute bottom-8 transform left-5 lg:left-20 right-5 lg:right-20;
 
       .swiper-wrapper {
-        align-items: center !important;
-        justify-content: space-between;
+        // align-items: center !important;
+        // justify-content: space-between;
+        @apply items-center justify-between;
 
         .swiper-slide {
           width: 100% !important;
-          max-width: 164px;
-          text-align: center;
+          // max-width: 164px;
+          // text-align: center;
 
-          /* Center slide text vertically */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+          // /* Center slide text vertically */
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
 
-        .swiper-slide img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          border: 2px solid #ffffff00;
-          border-radius: 0.5rem;
+          @apply w-full max-w-[80px] lg:max-w-[164px];
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #ffffff00;
+            border-radius: 0.5rem;
+          }
         }
 
         .swiper-slide-thumb-active img {

@@ -7,9 +7,9 @@ module.exports = {
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
-    "./node_modules/flowbite/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
     "./app.vue",
+    "./node_modules/flowbite/**/*.{js,ts}",
   ],
   darkMode: "media", // or 'media' or 'class'
   theme: {
@@ -82,8 +82,8 @@ module.exports = {
       "5xl": "3.052rem",
     },
   },
-  corePlugins: {
-    preflight: false,
-  },
+  // corePlugins: {
+  //   preflight: true,
+  // },
   plugins: [require("flowbite/plugin")],
 };

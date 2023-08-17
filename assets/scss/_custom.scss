@@ -1,14 +1,3 @@
-.blind-text {
-  color: var(--main-grey, #a7a7a7);
-
-  /* Title/Very small */
-  // font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 12px; /* 100% */
-}
-
 #carousel {
   .swiper-wrapper {
     align-items: center !important;
@@ -218,5 +207,19 @@
   .swiper-button-next::after,
   .swiper-button-prev::after {
     content: "";
+  }
+}
+
+#mediaid-swiper1 {
+  @apply h-[240px];
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply rounded-none w-[9px] h-[2px];
+    }
+
+    .swiper-pagination-bullet-active {
+      @apply h-[4px] bg-firebrick;
+    }
   }
 }

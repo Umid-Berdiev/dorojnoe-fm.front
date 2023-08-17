@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { Pagination } from "swiper/modules";
+
   const media = ref({
     id: 1,
     title: "Активное долголетие в Ленинградской области",
@@ -67,6 +69,26 @@
           @click="openGalleryModal(photoIndex)"
         />
       </template>
+    </div>
+    <div class="lg:hidden">
+      <Swiper
+        id="mediaid-swiper1"
+        :pagination="true"
+        :modules="[Pagination]"
+        :slidesPerView="1"
+        :spaceBetween="12"
+      >
+        <template v-for="(photo, photoIndex) in media.photos">
+          <SwiperSlide>
+            <img
+              :srcset="`${photo} 1x, ${photo} 2x`"
+              alt="Media photo"
+              class="w-full rounded-lg"
+              @click="openGalleryModal(photoIndex)"
+            />
+          </SwiperSlide>
+        </template>
+      </Swiper>
     </div>
     <!-- advertising -->
     <div class="lg:hidden advertising-mobile-block mt-8">

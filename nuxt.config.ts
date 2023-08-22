@@ -8,7 +8,6 @@ export default defineNuxtConfig({
 
   modules: ["nuxt-swiper", "nuxt-mapbox", "@nuxtjs/google-fonts"],
   css: ["~/assets/scss/main.scss"],
-  plugins: [],
   components: [
     {
       global: true,
@@ -37,7 +36,14 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL || "https://api.example.com/",
+      apiBase: process.env.API_BASE,
+      apiPlayer: process.env.API_PLAYER,
+      apiWs: process.env.API_WS,
+    },
+  },
+  vite: {
+    optimizeDeps: {
+      include: ["@vueform/multiselect", "@vueform/slider"],
     },
   },
 });

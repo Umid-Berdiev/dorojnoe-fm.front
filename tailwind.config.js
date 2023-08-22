@@ -10,6 +10,11 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
     "./node_modules/flowbite/**/*.{js,ts}",
+    // './vueform.config.js', // or where `vueform.config.js` is located
+    "./node_modules/@vueform/multiselect/**/*.vue",
+    "./node_modules/@vueform/slider/**/*.vue",
+    "./node_modules/@vueform/multiselect/**/*.{js,ts}",
+    "./node_modules/@vueform/slider/**/*.{js,ts}",
   ],
   darkMode: "media", // or 'media' or 'class'
   theme: {

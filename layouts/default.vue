@@ -29,9 +29,9 @@
 
 <style scoped lang="scss">
   .default {
-    @apply bg-main-bg-light mx-auto;
-    // max-width: 1280px;
+    max-width: 1280px;
     position: relative;
+    @apply bg-main-bg-light mx-auto;
 
     .toggle-icon {
       left: -0.9rem;

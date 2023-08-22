@@ -1,7 +1,7 @@
 <template>
   <div class="left-block flex-none">
     <div class="logo w-full text-center">
-      <NuxtLink to="/">
+      <NuxtLink to="/" class="inline-flex">
         <LogoIcon />
       </NuxtLink>
     </div>

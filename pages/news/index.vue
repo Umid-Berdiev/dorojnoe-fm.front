@@ -1,13 +1,11 @@
 <script setup lang="ts">
+  import { fetchNewsCategories, fetchNews } from "@/utils/api/news";
   import { Navigation } from "swiper/modules";
-  import {
-    newsCategories,
-    newsList,
-    slider1Data,
-    slider2Data,
-  } from "@/utils/mockdata/news";
 
   const modules = [Navigation];
+  const selectedNewsCategoryID = ref<number | null>(null);
+  const { data: newsCategories } = await fetchNewsCategories();
+  const { data: news } = await fetchNews();
 </script>
 
 <template>
@@ -16,9 +14,24 @@
   <PrimaryHeading underlined>Новости</PrimaryHeading>
   <!-- news categories -->
   <div class="hidden lg:flex lg:flex-wrap lg:gap-x-3 lg:gap-y-4 lg:mb-12">
-    <template v-for="(item, itemIndex) in newsCategories" :key="itemIndex">
-      <RadioButton class="bg-white" :id="item" name="category" :value="item">
-        {{ item }}
+    <RadioButton
+      v-model="selectedNewsCategoryID"
+      class="bg-white"
+      :id="0"
+      name="category"
+      :value="null"
+    >
+      Все
+    </RadioButton>
+    <template v-for="(item, itemIndex) in newsCategories.data" :key="itemIndex">
+      <RadioButton
+        v-model="selectedNewsCategoryID"
+        class="bg-white"
+        :id="item.id"
+        name="category"
+        :value="item.id"
+      >
+        {{ item.name }}
       </RadioButton>
     </template>
   </div>
@@ -38,8 +51,25 @@
         },
       }"
     >
-      <SwiperSlide v-for="(item, itemIndex) in newsCategories">
-        <RadioButton :id="item" name="category" :value="item" :label="item" />
+      <SwiperSlide>
+        <RadioButton
+          v-model="selectedNewsCategoryID"
+          class="bg-white"
+          :id="0"
+          name="category"
+          :value="null"
+          label="Все"
+        />
+      </SwiperSlide>
+      <SwiperSlide v-for="(item, itemIndex) in newsCategories.data">
+        <RadioButton
+          v-model="selectedNewsCategoryID"
+          class="bg-white"
+          :id="item.id"
+          name="category"
+          :value="item.id"
+          :label="item.name"
+        />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -47,9 +77,12 @@
   <div
     class="grid grid-cols-1 lg:grid-cols-4 lg:gap-x-6 gap-y-10 mb-16 lg:mb-28"
   >
-    <template v-for="(item, itemIndex) in newsList">
+    <template v-for="(item, itemIndex) in news.data">
       <NewsCardItem
-        :class="[(itemIndex === 0 || itemIndex === 5) && 'lg:col-span-2']"
+        :class="[
+          (itemIndex === 0 || itemIndex === 5 || itemIndex === 6) &&
+            'lg:col-span-2',
+        ]"
         :item="item"
       />
     </template>
@@ -58,7 +91,7 @@
   <Swiper
     id="news-page-carousel1"
     :spaceBetween="16"
-    :slidesPerView="1"
+    :slidesPerView="'auto'"
     :breakpoints="{
       '768': {
         slidesPerView: 2,
@@ -69,10 +102,11 @@
         spaceBetween: 24,
       },
     }"
+    :freeMode="true"
     :navigation="true"
     :modules="modules"
   >
-    <template v-for="item in slider1Data">
+    <template v-for="item in news.data">
       <SwiperSlide>
         <NewsCardItem :item="item" />
       </SwiperSlide>
@@ -94,7 +128,7 @@
       <div
         class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-10 mb-10 lg:mb-16"
       >
-        <template v-for="(item, itemIndex) in newsList">
+        <template v-for="(item, itemIndex) in news.data">
           <NewsCardItem :item="item" />
         </template>
       </div>
@@ -112,51 +146,5 @@
       />
     </div>
   </div>
-  <div class="flex flex-col lg:flex-row mt-16 lg:gap-10">
-    <PrimaryHeading class="lg:max-w-[404px]"
-      >Больше историй в наших социальных сетях</PrimaryHeading
-    >
-    <div class="flex gap-5 items-center lg:h-16">
-      <RouterLink to="/news">
-        <YoutubeShortsIcon />
-      </RouterLink>
-      <RouterLink to="/news">
-        <ColoredYoutubeIcon class="w-10" />
-      </RouterLink>
-      <RouterLink to="/news">
-        <VKIcon />
-      </RouterLink>
-      <RouterLink to="/news">
-        <OKIcon />
-      </RouterLink>
-      <RouterLink to="/news">
-        <TelegramIcon />
-      </RouterLink>
-    </div>
-  </div>
-  <div class="mt-10 lg:mt-12"></div>
-  <!-- news slider#2 -->
-  <Swiper
-    id="news-page-carousel2"
-    :spaceBetween="12"
-    :slidesPerView="1"
-    :breakpoints="{
-      '768': {
-        slidesPerView: 2,
-        spaceBetween: 16,
-      },
-      '1280': {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-    }"
-    :navigation="true"
-    :modules="modules"
-  >
-    <template v-for="item in slider2Data">
-      <SwiperSlide>
-        <img :srcset="`${item} 1x, ${item} 2x`" />
-      </SwiperSlide>
-    </template>
-  </Swiper>
+  <InSocialsBlock />
 </template>

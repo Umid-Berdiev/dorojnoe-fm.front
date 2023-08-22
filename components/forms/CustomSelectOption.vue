@@ -1,24 +1,9 @@
 <script setup lang="ts">
-  import {
-    Listbox,
-    ListboxButton,
-    ListboxOptions,
-    ListboxOption,
-  } from "@headlessui/vue";
-  import {
-    CheckIcon,
-    ChevronUpIcon,
-    ChevronDownIcon,
-  } from "@heroicons/vue/20/solid";
-  import SimpleBar from "simplebar-vue";
+  import { ListboxOption } from "@headlessui/vue";
   import "simplebar-vue/dist/simplebar.min.css";
 
   interface CustomSelectProps {
-    options: any[];
-    placeholder?: string;
     modelValue?: string | number;
-    asValue: string;
-    asLabel: string;
   }
 
   const props = withDefaults(defineProps<CustomSelectProps>(), {
@@ -54,12 +39,6 @@
         'relative cursor-default select-none py-2 px-4',
       ]"
     >
-      <!-- <span
-        v-if="selected"
-        class="inset-y-0 flex items-center pl-3 text-gray-600"
-      >
-        <CheckIcon class="h-5 w-5" aria-hidden="true" />
-      </span> -->
       <span
         :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']"
       >

@@ -78,34 +78,33 @@
 
 #news-page-carousel1 {
   .swiper-wrapper {
-    align-items: start !important;
-    justify-content: space-between;
+    // align-items: start !important;
+    // justify-content: space-between;
+    // @apply justify-between w-full;
 
     .swiper-slide {
-      width: 100% !important;
-      // max-width: 313px;
-      // text-align: center;
+      // width: 100% !important;
 
       /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @apply max-w-[194px] lg:max-w-[313px];
-    }
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      @apply flex max-w-[194px] lg:max-w-[313px];
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      // object-fit: scale-down;
-      @apply rounded-[28px] lg:rounded-2xl w-[194px] h-[300px] lg:w-[313px] lg:h-[380px];
+      img {
+        // display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @apply rounded-[28px] lg:rounded-2xl h-[300px] lg:h-[380px];
+      }
     }
   }
 
   .swiper-button-next,
   .swiper-button-prev {
     background-size: 28px;
-    @apply bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
+    @apply hidden lg:flex bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
   }
 
   .swiper-button-prev {
@@ -149,7 +148,7 @@
   .swiper-button-next,
   .swiper-button-prev {
     background-size: 28px;
-    @apply bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
+    @apply hidden lg:flex bg-white bg-center bg-no-repeat p-[30px] rounded-full border border-gray-300;
   }
 
   .swiper-button-prev {
@@ -220,6 +219,42 @@
 
     .swiper-pagination-bullet-active {
       @apply h-[4px] bg-firebrick;
+    }
+  }
+}
+
+#main-banner-swiper {
+  @apply h-[25.25rem];
+
+  .swiper-wrapper {
+    .swiper-slide img {
+      @apply h-[23rem] lg:h-auto rounded-3xl;
+    }
+  }
+
+  .swiper-pagination {
+    @apply bottom-0 text-center lg:text-start lg:pl-8;
+
+    .swiper-pagination-bullet {
+      @apply rounded-none w-[3.75rem] h-[.125rem];
+    }
+
+    .swiper-pagination-bullet-active {
+      @apply h-[.25rem] bg-black;
+    }
+  }
+}
+
+#secondary-banner-swiper {
+  .swiper-wrapper {
+    align-items: center;
+
+    .swiper-slide {
+      @apply w-[7.5rem] #{!important};
+    }
+
+    .swiper-slide-active {
+      @apply w-[9.25rem] #{!important};
     }
   }
 }

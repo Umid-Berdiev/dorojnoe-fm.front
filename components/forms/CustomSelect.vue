@@ -5,18 +5,14 @@
     ListboxOptions,
     ListboxOption,
   } from "@headlessui/vue";
-  import {
-    CheckIcon,
-    ChevronUpIcon,
-    ChevronDownIcon,
-  } from "@heroicons/vue/20/solid";
+  import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
   import SimpleBar from "simplebar-vue";
   import "simplebar-vue/dist/simplebar.min.css";
 
   interface CustomSelectProps {
     options?: any[];
     placeholder?: string;
-    modelValue?: string | number;
+    modelValue?: string | number | null;
     asValue?: string;
     asLabel?: string;
   }
@@ -30,7 +26,7 @@
   });
 
   const emits = defineEmits<{
-    (e: "update:modelValue", value: string | number): void;
+    (e: "update:modelValue", value: string | number | null): void;
   }>();
 
   const selectedOption = computed({
@@ -52,7 +48,9 @@
       >
         <span class="block truncate">
           {{
-            options.length > 0
+            !selectedOption
+              ? placeholder
+              : options.length > 0
               ? options.find((option) => option[asValue] === selectedOption)[
                   asLabel
                 ]

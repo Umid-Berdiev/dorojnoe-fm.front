@@ -14,7 +14,7 @@
     <h1 class="content">
       <slot />
     </h1>
-    <div v-if="underlined" class="line bg-firebrick" />
+    <div v-show="underlined" class="line bg-firebrick" />
   </div>
 </template>
 

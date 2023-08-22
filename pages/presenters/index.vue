@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { presentersList } from "@/utils/mockdata/news";
+  const { data: presenters } = await fetchPresenters();
 </script>
 
 <template>
@@ -11,7 +11,7 @@
       class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-10 gap-y-8 lg:gap-y-12"
     >
       <NuxtLink
-        v-for="item in presentersList"
+        v-for="item in presenters.data"
         :key="item.id"
         :to="`/presenters/${item.id}`"
       >

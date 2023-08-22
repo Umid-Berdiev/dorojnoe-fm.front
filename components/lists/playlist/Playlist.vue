@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  //
+  const isLoading = ref(false);
 </script>
 
 <template>
@@ -9,7 +9,9 @@
         <PlaylistItem />
       </template>
     </ul>
-    <PrimaryButtonRed> Больше результатов </PrimaryButtonRed>
+    <PrimaryButtonRed :loading="isLoading">
+      Больше результатов
+    </PrimaryButtonRed>
   </div>
 </template>
 

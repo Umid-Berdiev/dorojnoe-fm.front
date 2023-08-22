@@ -85,7 +85,6 @@
     font-inter 
     pl-4 
     pr-2 
-    py-2
-    min-h-[38px];
+    max-h-[40px];
   }
 </style>

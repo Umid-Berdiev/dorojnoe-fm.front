@@ -23,7 +23,10 @@
     >
       Все
     </RadioButton>
-    <template v-for="(item, itemIndex) in newsCategories.data" :key="itemIndex">
+    <template
+      v-for="(item, itemIndex) in newsCategories?.data"
+      :key="itemIndex"
+    >
       <RadioButton
         v-model="selectedNewsCategoryID"
         class="bg-white"
@@ -61,7 +64,7 @@
           label="Все"
         />
       </SwiperSlide>
-      <SwiperSlide v-for="(item, itemIndex) in newsCategories.data">
+      <SwiperSlide v-for="(item, itemIndex) in newsCategories?.data">
         <RadioButton
           v-model="selectedNewsCategoryID"
           class="bg-white"
@@ -77,7 +80,7 @@
   <div
     class="grid grid-cols-1 lg:grid-cols-4 lg:gap-x-6 gap-y-10 mb-16 lg:mb-28"
   >
-    <template v-for="(item, itemIndex) in news.data">
+    <template v-for="(item, itemIndex) in news?.data">
       <NewsCardItem
         :class="[
           (itemIndex === 0 || itemIndex === 5 || itemIndex === 6) &&
@@ -106,7 +109,7 @@
     :navigation="true"
     :modules="modules"
   >
-    <template v-for="item in news.data">
+    <template v-for="item in news?.data">
       <SwiperSlide>
         <NewsCardItem :item="item" />
       </SwiperSlide>
@@ -128,7 +131,7 @@
       <div
         class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-10 mb-10 lg:mb-16"
       >
-        <template v-for="(item, itemIndex) in news.data">
+        <template v-for="(item, itemIndex) in news?.data">
           <NewsCardItem :item="item" />
         </template>
       </div>

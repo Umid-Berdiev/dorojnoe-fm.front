@@ -18,7 +18,7 @@
     </div>
     <input
       type="search"
-      id="default-search"
+      class="default-search-input"
       :placeholder="placeholder"
       required
     />
@@ -26,9 +26,22 @@
 </template>
 
 <style scoped lang="scss">
-  #default-search {
+  .default-search-input {
     color: var(--main-grey, #a7a7a7);
     // border: 1px solid #dbdbdb;
-    @apply border border-[#dbdbdb] text-sm lg:text-base block w-full p-2.5 pl-10 text-gray-900 rounded-3xl bg-white focus:ring-blue-500 focus:border-blue-500 font-inter;
+    @apply border
+    border-[#dbdbdb]
+    text-sm
+    lg:text-base
+    block
+    w-full
+    py-[7px]
+    pl-10
+    text-gray-900
+    rounded-3xl
+    bg-white
+    focus:ring-blue-500
+    focus:border-blue-500
+    font-inter;
   }
 </style>

@@ -85,7 +85,7 @@
     > -->
     <div class="relative mt-2">
       <ListboxButton
-        class="relative w-full cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 focus:outline-none sm:text-sm sm:leading-6"
+        class="relative w-full cursor-pointer bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 focus:outline-none sm:text-sm sm:leading-6"
       >
         <span class="flex items-center">
           <img

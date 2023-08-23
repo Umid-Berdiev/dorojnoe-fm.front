@@ -23,19 +23,19 @@
 
 <template>
   <div class="w-full">
-    <swiper
+    <Swiper
       id="secondary-banner-swiper"
       class="my-auto"
       :slidesPerView="'auto'"
       :centeredSlides="true"
       :spaceBetween="32"
     >
-      <swiper-slide v-for="slide in slides">
+      <SwiperSlide v-for="slide in slides">
         <img :srcset="`${slide.mainImage}`" alt="slide image" />
         <p class="slide-title">{{ slide.title }}</p>
         <p class="slide-singer">{{ slide.singer }}</p>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </template>
 

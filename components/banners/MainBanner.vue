@@ -20,18 +20,18 @@
 
 <template>
   <div class="w-full">
-    <swiper
+    <Swiper
       id="main-banner-swiper"
       :pagination="true"
       :modules="modules"
       :slidesPerView="'auto'"
     >
-      <swiper-slide v-for="(banner, bannerIndex) in banners1">
+      <SwiperSlide v-for="(banner, bannerIndex) in banners1">
         <img
           :srcset="`${banner} 1x, ${banners2[bannerIndex]} 2x`"
           class="w-auto"
         />
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </template>

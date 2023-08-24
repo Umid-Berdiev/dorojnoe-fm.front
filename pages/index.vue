@@ -6,7 +6,7 @@
 
   const modules = [Navigation];
   const { data: news } = await fetchNews();
-  const selectedOfTop10 = ref(null);
+  const selectedOfTop10 = ref("Сколько нас таких красивых");
   // const { data: newsCategories } = await fetchNewsCategories();
 </script>
 
@@ -26,13 +26,16 @@
       </div>
     </div>
   </div>
+  <!-- anons -->
   <section class="mt-10">
-    <div class="grid grid-cols-3 gap-6">
+    <AnonsSlider />
+    <!-- <div class="hidden lg:grid grid-cols-3 gap-6">
       <img class="" srcset="/assets/images/anons1_1.png" alt="anons image" />
       <img class="" srcset="/assets/images/anons1_2.png" alt="anons image" />
       <img class="" srcset="/assets/images/anons1_3.png" alt="anons image" />
-    </div>
+    </div> -->
   </section>
+  <!-- broadcast programs -->
   <section class="mt-20">
     <div class="flex flex-col lg:flex-row">
       <div class="items-center lg:w-[200px] flex-none">
@@ -54,7 +57,7 @@
         </div>
       </div>
       <!-- mobile version -->
-      <div class="block lg:hidden mt-5">
+      <div class="lg:hidden mt-5">
         <Swiper
           :slidesPerView="'auto'"
           :centeredSlides="true"
@@ -76,36 +79,32 @@
     </div>
   </section>
   <InSocialsBlock />
-  <section class="lg:mt-28">
-    <div class="grid grid-cols-4 gap-12">
-      <div>
-        <PrimaryHeading underlined>Новинки эфира</PrimaryHeading>
-        <div class="mt-3">
-          <Swiper>
-            <SwiperSlide>
-              <img
-                srcset="/assets/images/cover_top10.png"
-                alt="cover_top10 image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                srcset="/assets/images/sidebar_streams1.png"
-                alt="cover_top10 image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                srcset="/assets/images/sidebar_streams2.png"
-                alt="cover_top10 image"
-              />
-            </SwiperSlide>
-          </Swiper>
+  <!-- top10 -->
+  <section class="mt-16 lg:mt-28">
+    <div class="flex gap-8 lg:gap-12">
+      <PrimaryHeading underlined>Новинки эфира</PrimaryHeading>
+      <h1 class="font-roboto-condensed text-[1.5rem] uppercase">Топ 10</h1>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-2 lg:mt-4">
+      <!-- mobile version -->
+      <div class="lg:hidden">
+        <RadioButtonSlider :data="top10" v-model="selectedOfTop10" />
+      </div>
+      <div class="lg:flex-none">
+        <div class="flex lg:flex-col gap-4 lg:gap-10 items-center">
+          <img
+            srcset="/assets/images/cover_top10.png"
+            alt="cover_top10 image"
+            class="cover-top10"
+          />
+          <div class="">
+            <p class="song-title">Сколько нас таких красивых</p>
+            <p class="singer-fullname">Ирина Круг, Тамара Кутидзе</p>
+          </div>
         </div>
       </div>
-      <div class="col-span-3">
-        <h1 class="font-montserrat text-[1.5rem] uppercase">Топ 10</h1>
-        <div class="flex flex-wrap gap-3 mt-16">
+      <div class="hidden lg:block flex-grow">
+        <div class="flex flex-wrap gap-3">
           <template v-for="(item, itemIndex) in top10">
             <RadioButton
               v-model="selectedOfTop10"
@@ -120,7 +119,7 @@
     </div>
   </section>
   <!-- news slider#1 -->
-  <section class="lg:mt-28">
+  <section class="mt-20 lg:mt-28">
     <Swiper
       id="news-page-carousel1"
       :spaceBetween="16"
@@ -146,18 +145,8 @@
       </template>
     </Swiper>
   </section>
+  <!-- news block -->
   <section class="mt-24">
-    <!-- news cards with advertising -->
-    <div class="lg:hidden advertising-mobile-block mt-16">
-      <img
-        srcset="
-          /assets/images/news_mobile_advertising.png 1x,
-          /assets/images/news_mobile_advertising.png 2x
-        "
-        alt="Advertising"
-        class="w-full"
-      />
-    </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-6 mt-16 lg:mt-28">
       <div class="col-span-2">
         <div
@@ -191,5 +180,32 @@
     .vote-top-10 {
       @apply inline-flex py-3 px-5 items-start rounded-3xl bg-white font-montserrat text-base font-bold;
     }
+  }
+
+  .cover-top10 {
+    box-shadow: 0 1.5rem 1px -0.75rem #7686a3, 0 2.6rem 1px -1.25rem #d9ced0;
+    @apply rounded-lg w-[8.125rem] lg:w-full;
+  }
+
+  .song-title {
+    @apply overflow-hidden
+    text-main-black
+    text-ellipsis
+    whitespace-nowrap
+    font-roboto-condensed
+    text-base
+    font-medium
+    leading-[1.125rem];
+  }
+
+  .singer-fullname {
+    @apply overflow-hidden
+    text-main-grey
+    text-ellipsis
+    whitespace-nowrap
+    font-inter
+    text-sm
+    font-semibold
+    leading-3;
   }
 </style>

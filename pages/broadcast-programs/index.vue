@@ -1,7 +1,9 @@
 <script setup lang="ts">
+  import { fetchBroadcastPrograms } from "@/utils/api/broadcastPrograms";
   import { categories } from "@/utils/mockdata/broadcastPrograms";
 
   const selectedCategoryID = ref<number | null>(null);
+  const { data: broadcastPrograms } = await fetchBroadcastPrograms();
 </script>
 
 <template>
@@ -42,4 +44,5 @@
       </template>
     </div>
   </section>
+  <section></section>
 </template>

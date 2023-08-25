@@ -59,6 +59,7 @@
         month: newVal1,
         year: newVal2,
       };
+      mediaList.value = [];
       const data = await activeApiFunc.value(params);
       mediaList.value = data?.data;
       pagination.value = data?.pagination;

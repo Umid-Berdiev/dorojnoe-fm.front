@@ -6,7 +6,7 @@
 
   const modules = [Navigation];
   const { data: news } = await fetchNews();
-  const selectedOfTop10 = ref("Сколько нас таких красивых");
+  const selectedOfTop10 = ref(7);
   // const { data: newsCategories } = await fetchNewsCategories();
 </script>
 
@@ -44,7 +44,7 @@
         >
       </div>
       <!-- desktop version -->
-      <div class="hidden lg:block flex-grow pl-8 border-l-2">
+      <div class="hidden lg:block flex-grow pl-8 border-l">
         <div class="flex gap-4 flex-wrap items-center">
           <template v-for="(item, itemIndex) in newsCategories">
             <button
@@ -88,7 +88,12 @@
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-2 lg:mt-4">
       <!-- mobile version -->
       <div class="lg:hidden">
-        <RadioButtonSlider :data="top10" v-model="selectedOfTop10" />
+        <RadioButtonSlider
+          :data="top10"
+          v-model="selectedOfTop10"
+          as-label="name"
+          as-value="id"
+        />
       </div>
       <div class="lg:flex-none">
         <div class="flex lg:flex-col gap-4 lg:gap-10 items-center">

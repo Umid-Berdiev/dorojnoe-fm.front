@@ -46,31 +46,38 @@
 </script>
 
 <template>
-  <div class="grid lg:grid-cols-2 lg:gap-8">
-    <template v-for="(item, itemIndex) in podcasts">
-      <!-- <template v-if="itemIndex === 4">
-        <div class=""></div>
-      </template> -->
-      <div class="flex gap-3">
-        <div>
-          <img
-            src="/assets/images/podcast_play_icon.png"
-            alt="Podcast play icon"
-          />
-        </div>
-        <div class="flex flex-col">
-          <h5 class="font-oswald font-medium text-sm uppercase">
-            {{ item.title }}
-          </h5>
-          <p class="font-inter text-base mt-1.5">{{ item.body }}</p>
-          <div
-            class="inline-flex justify-between font-inter text-xs font-medium mt-2.5 opacity-60"
-          >
-            <span>{{ item.date }}</span>
-            <span>{{ item.duration }}</span>
+  <div>
+    <div class="grid lg:grid-cols-2 lg:gap-8">
+      <template v-for="(item, itemIndex) in podcasts">
+        <!-- <template v-if="itemIndex === 4">
+          <div class=""></div>
+        </template> -->
+        <div class="flex gap-3">
+          <div>
+            <img
+              src="/assets/images/podcast_play_icon.png"
+              alt="Podcast play icon"
+            />
+          </div>
+          <div class="flex flex-col">
+            <h5 class="font-oswald font-medium text-sm uppercase">
+              {{ item.title }}
+            </h5>
+            <p class="font-inter text-base mt-1.5">{{ item.body }}</p>
+            <div
+              class="inline-flex justify-between font-inter text-xs font-medium mt-2.5 opacity-60"
+            >
+              <span>{{ item.date }}</span>
+              <span>{{ item.duration }}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
+    <button
+      class="mt-7 rounded-43xl bg-main-bg-light py-2.5 px-4 font-inter text-base font-medium leading-[18px]"
+    >
+      Все
+    </button>
   </div>
 </template>

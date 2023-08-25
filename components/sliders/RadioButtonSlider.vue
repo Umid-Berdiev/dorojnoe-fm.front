@@ -3,10 +3,14 @@
     defineProps<{
       data: any[];
       modelValue: string | number | boolean | null;
+      asLabel?: string;
+      asValue?: string;
     }>(),
     {
       data: [],
       modelValue: null,
+      asLabel: "label",
+      asValue: "value",
     }
   );
 
@@ -28,7 +32,7 @@
   watchEffect(() => {
     if (props.data && props.modelValue) {
       const foundIndex = props.data.findIndex(
-        (item) => item === props.modelValue
+        (item) => item[props.asValue] === props.modelValue
       );
       selectedItemIndex.value = foundIndex;
     }
@@ -43,9 +47,18 @@
     :centeredSlides="true"
     :spaceBetween="12"
   >
+    <SwiperSlide>
+      <RadioButton v-model="selectedItem" :value="null" class="bg-white w-auto">
+        Все
+      </RadioButton>
+    </SwiperSlide>
     <SwiperSlide v-for="(item, itemIndex) in data" style="width: auto">
-      <RadioButton v-model="selectedItem" :value="item" class="bg-white w-auto">
-        {{ item }}
+      <RadioButton
+        v-model="selectedItem"
+        :value="item[asValue] ?? item"
+        class="bg-white w-auto"
+      >
+        {{ item[asLabel] ?? item }}
       </RadioButton>
     </SwiperSlide>
   </Swiper>

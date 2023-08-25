@@ -21,7 +21,7 @@
         </RouterLink>
       </div>
       <div class="py-2.5 px-4">
-        <RouterLink to="/programs" class="flex items-center gap-4">
+        <RouterLink to="/broadcast-programs" class="flex items-center gap-4">
           <div class="w-6 text-center">
             <ProgramsIcon class="" />
           </div>

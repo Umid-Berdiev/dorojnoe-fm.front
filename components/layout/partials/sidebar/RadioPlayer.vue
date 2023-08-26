@@ -4,6 +4,13 @@
   // export default defineNuxtPlugin((nuxtApp) => {
   //   nuxtApp.vueApp.use(flowbite);
   // });
+
+  const isVolumeControlVisible = ref(false);
+  const volumeStep = ref(50);
+
+  function toggleVolumeControl() {
+    isVolumeControlVisible.value = !isVolumeControlVisible.value;
+  }
 </script>
 
 <template>
@@ -25,26 +32,14 @@
         </button>
       </div>
       <div class="flex flex-col items-center gap-3 pt-3">
-        <button type="button" class="volume-btn peer">
+        <button type="button" class="volume-btn" @click="toggleVolumeControl">
           <VolumeIcon />
         </button>
-        <div
-          class="absolute top-[13.5rem] left-[14.5rem] hidden peer-focus:flex items-center gap-2 lg:w-[10rem] bg-white p-2 rounded-full shadow-sm z-50"
-        >
-          <button type="button" class="volume-btn">
-            <VolumeIcon />
+        <div v-if="isVolumeControlVisible" class="volume-control-wrapper">
+          <button type="button" class="volume-btn" @click="toggleVolumeControl">
+            <VolumeIcon fill="#FE576F" />
           </button>
-          <input
-            id="small-range"
-            type="range"
-            value="50"
-            class="w-full h-[5px] bg-gray-200 rounded-lg appearance-none cursor-pointer range-xs"
-          />
-          <!-- <input
-            type="range"
-            class="transparent h-1 w-full cursor-pointer appearance-none border-transparent bg-neutral-200"
-            id="customRange1"
-          /> -->
+          <input type="range" v-model="volumeStep" min="0" max="100" step="1" />
         </div>
         <button class="bg-transparent p-0 mt-auto">
           <ChevronDoubleUpIcon />
@@ -92,19 +87,60 @@
         @apply bg-transparent p-0;
       }
 
-      // .volume-btn:hover .hidden-block {
-      //   display: block;
-      //   transition: 1s; /* moved this */
-      // }
+      .volume-control-wrapper {
+        box-shadow: 0px 6.6579976081848145px 13.315995216369629px -8.322497367858887px
+          rgba(0, 0, 0, 0.12);
+        @apply flex absolute top-[13.6rem] left-[14.5rem] items-center gap-2 lg:w-[10rem] bg-white p-2 pr-4 rounded-full z-50;
+      }
+
+      /** FF*/
+      input[type="range"]::-moz-range-progress {
+        background-color: #fe576f;
+      }
+      input[type="range"]::-moz-range-track {
+        background-color: #e3e3e9;
+      }
+      /* IE*/
+      input[type="range"]::-ms-fill-lower {
+        background-color: #fe576f;
+      }
+      input[type="range"]::-ms-fill-upper {
+        background-color: #e3e3e9;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        height: 6px;
+        width: 6px;
+        background: #fe576f;
+        border-radius: 9999px;
+        border: 0;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  /*Chrome*/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="range"] {
+      overflow: hidden;
+      cursor: pointer;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      // background-color: #e3e3e9;
+      border-radius: 10px;
     }
 
-    input[type="range"].range-xs::-webkit-slider-thumb {
-      height: 0.5rem /* 16px */;
-      width: 0.5rem /* 16px */;
-    }
-    input[type="range"].range-xs::-moz-range-thumb {
-      height: 0.5rem /* 16px */;
-      width: 0.5rem /* 16px */;
+    input[type="range"]::-webkit-slider-thumb {
+      width: 6px;
+      -webkit-appearance: none;
+      height: 6px;
+      cursor: pointer;
+      background: #fe576f;
+      box-shadow: -80px 0 0 80px #fe576f;
     }
   }
 </style>

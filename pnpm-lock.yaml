@@ -17,9 +17,6 @@ dependencies:
   '@vueform/multiselect':
     specifier: ^2.6.2
     version: 2.6.2
-  '@vueform/slider':
-    specifier: ^2.1.7
-    version: 2.1.7
   animate.css:
     specifier: ^4.1.1
     version: 4.1.1
@@ -1595,6 +1592,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -2180,10 +2178,6 @@ packages:
 
   /@vueform/multiselect@2.6.2:
     resolution: {integrity: sha512-4BFvXyzyi0Pqi/lsYdGwONsQy+ypiVzuQbmoDUlttTxuoujFtf9AdeHi1ZhfIorXG9BiysK1HcQSfYB6USgwfQ==}
-    dev: false
-
-  /@vueform/slider@2.1.7:
-    resolution: {integrity: sha512-wKyiVVN03RKTV2vp7r50PDq5hcM4kVVzUO2ex+BAAtrn5oX08iU5NzWTWCuH7dCkiLMDRUVravDu3B0NwaxZMQ==}
     dev: false
 
   /@vueuse/core@10.3.0(vue@3.3.4):
@@ -5073,6 +5067,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /negotiator@0.6.3:

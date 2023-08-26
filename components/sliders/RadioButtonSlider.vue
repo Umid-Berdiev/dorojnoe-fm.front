@@ -2,7 +2,7 @@
   const props = withDefaults(
     defineProps<{
       data: any[];
-      modelValue: string | number | boolean | null;
+      modelValue: string | number | null;
       asLabel?: string;
       asValue?: string;
     }>(),
@@ -15,14 +15,14 @@
   );
 
   const emits = defineEmits<{
-    "update:modelValue": [payload: string | number | boolean | null];
+    "update:modelValue": [payload: string | number | null];
   }>();
 
   const selectedItem = computed({
     get() {
       return props.modelValue;
     },
-    set(val: string | number | boolean | null) {
+    set(val: string | number | null) {
       emits("update:modelValue", val);
     },
   });
@@ -31,9 +31,11 @@
 
   watchEffect(() => {
     if (props.data && props.modelValue) {
-      const foundIndex = props.data.findIndex(
-        (item) => item[props.asValue] === props.modelValue
-      );
+      const foundIndex = props.data.findIndex((item) => {
+        if (typeof item === "object")
+          return item[props.asValue] === props.modelValue;
+        else item === props.modelValue;
+      });
       selectedItemIndex.value = foundIndex;
     }
   });

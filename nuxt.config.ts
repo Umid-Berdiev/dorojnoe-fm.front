@@ -43,7 +43,7 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      include: ["@vueform/multiselect", "@vueform/slider"],
+      include: ["@vueform/multiselect"],
     },
   },
 });

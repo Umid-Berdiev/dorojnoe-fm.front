@@ -113,10 +113,10 @@
           <template v-for="(item, itemIndex) in top10">
             <RadioButton
               v-model="selectedOfTop10"
-              :value="item"
+              :value="item.id"
               class="bg-white"
             >
-              {{ item }}
+              {{ item.name }}
             </RadioButton>
           </template>
         </div>

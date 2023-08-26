@@ -29,8 +29,9 @@
       :slidesPerView="'auto'"
       :centeredSlides="true"
       :spaceBetween="32"
+      :slideToClickedSlide="true"
     >
-      <SwiperSlide v-for="slide in slides">
+      <SwiperSlide v-for="slide in slides" class="cursor-pointer">
         <img :srcset="`${slide.mainImage}`" alt="slide image" />
         <p class="slide-title">{{ slide.title }}</p>
         <p class="slide-singer">{{ slide.singer }}</p>

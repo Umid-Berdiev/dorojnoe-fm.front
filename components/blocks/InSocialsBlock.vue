@@ -31,16 +31,16 @@
   </div>
   <div class="mt-10 lg:mt-4">
     <Swiper
-      id="news-page-carousel2"
-      :spaceBetween="12"
-      :slidesPerView="'auto'"
+      id="socials-carousel"
+      :spaceBetween="16"
+      :slidesPerView="1.75"
       :breakpoints="{
         '768': {
-          slidesPerView: 2,
+          slidesPerView: 2.5,
           spaceBetween: 16,
         },
         '1280': {
-          slidesPerView: 4,
+          slidesPerView: 4.5,
           spaceBetween: 20,
         },
       }"

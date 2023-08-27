@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { NewsType } from "utils/interfaces";
+  import { NewsType } from "@/utils/interfaces";
   import { formatDate } from "@vueuse/core";
 
   defineProps<{

@@ -68,68 +68,70 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
-  <TheBreadcrumb :path="['Радиостанция', 'Контакты']" />
-  <div class="relative">
-    <PrimaryHeading underlined>Контакты</PrimaryHeading>
-    <IconLogo class="hidden lg:inline-block absolute right-0" />
-  </div>
-  <div class="mt-6">
-    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
-      Офис в Москве
-    </SecondaryHeading>
-
-    <NuxtList2 :data="data1" />
-  </div>
-  <div class="mt-12">
-    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
-      Рекламная служба
-    </SecondaryHeading>
-
-    <NuxtList2 :data="data2" />
-  </div>
-  <div class="mt-12">
-    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
-      Программная служба
-    </SecondaryHeading>
-
-    <NuxtList2
-      :data="data1"
-      class="bg-white px-4 py-3 rounded-2xl lg:px-8 lg:py-6 lg:rounded-4xl"
-    />
-  </div>
-  <div class="mt-12">
-    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
-      Менеджер по региональному развитию сети
-    </SecondaryHeading>
-
-    <NuxtList2 :data="data4" />
-
-    <hr class="text-gray-200" />
-  </div>
-  <div class="mt-12">
-    <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
-      Программа по заявкам «Добрый вечер»
-    </SecondaryHeading>
-
-    <NuxtList2 :data="data5" />
-
-    <hr class="text-gray-200" />
-  </div>
-  <div class="relative my-16 lg:my-28 h-[412px] lg:h-[542px]">
-    <div class="flex flex-row gap-3">
-      <template v-for="city in cities">
-        <RadioButton
-          :id="city.name"
-          name="city"
-          :value="city.name"
-          :checked="selectedCity?.name === city.name"
-          @input="selectedCity = city"
-        >
-          {{ city.name }}
-        </RadioButton>
-      </template>
+  <div class="default-container">
+    <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
+    <TheBreadcrumb :path="['Радиостанция', 'Контакты']" />
+    <div class="relative">
+      <PrimaryHeading underlined>Контакты</PrimaryHeading>
+      <LogoIcon class="hidden lg:inline-block absolute right-0" />
     </div>
-    <TheMap :current-lnglat="selectedCity?.lnglat" />
+    <div class="mt-6">
+      <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+        Офис в Москве
+      </SecondaryHeading>
+
+      <NuxtList2 :data="data1" />
+    </div>
+    <div class="mt-12">
+      <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+        Рекламная служба
+      </SecondaryHeading>
+
+      <NuxtList2 :data="data2" />
+    </div>
+    <div class="mt-12">
+      <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+        Программная служба
+      </SecondaryHeading>
+
+      <NuxtList2
+        :data="data1"
+        class="bg-white px-4 py-3 rounded-2xl lg:px-8 lg:py-6 lg:rounded-4xl"
+      />
+    </div>
+    <div class="mt-12">
+      <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+        Менеджер по региональному развитию сети
+      </SecondaryHeading>
+
+      <NuxtList2 :data="data4" />
+
+      <hr class="text-gray-200" />
+    </div>
+    <div class="mt-12">
+      <SecondaryHeading class="max-w-[15rem] lg:max-w-none">
+        Программа по заявкам «Добрый вечер»
+      </SecondaryHeading>
+
+      <NuxtList2 :data="data5" />
+
+      <hr class="text-gray-200" />
+    </div>
+    <div class="relative my-16 lg:my-28 h-[412px] lg:h-[542px]">
+      <div class="flex flex-row gap-3">
+        <template v-for="city in cities">
+          <RadioButton
+            :id="city.name"
+            name="city"
+            :value="city.name"
+            :checked="selectedCity?.name === city.name"
+            @input="selectedCity = city"
+          >
+            {{ city.name }}
+          </RadioButton>
+        </template>
+      </div>
+      <TheMap :current-lnglat="selectedCity?.lnglat" />
+    </div>
   </div>
 </template>

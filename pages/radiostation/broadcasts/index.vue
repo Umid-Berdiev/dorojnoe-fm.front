@@ -10,33 +10,43 @@
     "Суббота",
     "Воскресенье",
   ]);
+  const selectedWeekDay = ref("Понедельник");
 </script>
 
 <template>
-  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
-  <TheBreadcrumb :path="['Радиостанция', 'Сетка вещания']" />
-  <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
-  <Swiper
-    id="week-carousel"
-    :spaceBetween="12"
-    :slidesPerView="3"
-    :breakpoints="{
-      '768': {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      '1280': {
-        slidesPerView: 7,
-        spaceBetween: 40,
-      },
-    }"
-  >
-    <SwiperSlide v-for="day in week">
-      <RadioButton :id="day" name="day" :label="day" :value="day" />
-    </SwiperSlide>
-  </Swiper>
-  <Broadcasts />
-  <NewsCard />
+  <div class="default-container">
+    <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
+    <TheBreadcrumb :path="['Радиостанция', 'Сетка вещания']" />
+    <PrimaryHeading underlined>Сетка вещания</PrimaryHeading>
+    <Swiper
+      id="week-carousel"
+      :spaceBetween="12"
+      :slidesPerView="3"
+      :breakpoints="{
+        '768': {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        '1280': {
+          slidesPerView: 'auto',
+          spaceBetween: 40,
+        },
+      }"
+    >
+      <SwiperSlide v-for="day in week">
+        <RadioButton
+          v-model="selectedWeekDay"
+          :id="day"
+          class="bg-white"
+          name="day"
+          :label="day"
+          :value="day"
+        />
+      </SwiperSlide>
+    </Swiper>
+    <Broadcasts />
+    <NewsCard />
+  </div>
 </template>
 
 <style scoped lang="scss">

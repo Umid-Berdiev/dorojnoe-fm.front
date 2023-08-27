@@ -129,7 +129,7 @@
     lg:text-base 
     w-full 
     leading-5;
-    // lg:min-w-[150px]
+    // lg:min-w-[150px];
   }
 
   .options-wrapper {

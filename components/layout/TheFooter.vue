@@ -10,7 +10,7 @@
 
 <template>
   <section class="lg:ml-[280px] w-auto bottom-0 bg-inherit mt-20 lg:mt-28">
-    <div class="px-3 py-4 lg:px-8 lg:py-4 bg-[#eaeaef]">
+    <div class="px-3 py-4 lg:px-8 lg:py-4 bg-whitesmoke">
       <Swiper
         id="carousel"
         :spaceBetween="20"
@@ -197,7 +197,8 @@
 
 <style scoped lang="scss">
   .radios {
-    background-color: #eaeaef;
+    // background-color: #eaeaef;
+    @apply bg-whitesmoke;
   }
 
   .main-links {

@@ -4,10 +4,7 @@
   <div class="default">
     <TheSidebar />
     <TheMobileSidebar />
-    <main
-      id="main-content"
-      class="lg:ml-[280px] w-auto relative px-3 md:px-8 pt-5 md:pt-6 bg-inherit"
-    >
+    <main id="main-content" class="lg:ml-[280px] w-auto relative bg-inherit">
       <slot />
     </main>
     <TheFooter />

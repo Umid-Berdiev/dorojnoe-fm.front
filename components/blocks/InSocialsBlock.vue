@@ -8,25 +8,25 @@
 <template>
   <!-- news slider#2 -->
   <div class="flex flex-col lg:flex-row mt-16 lg:gap-10">
-    <PrimaryHeading class="lg:max-w-[404px]"
-      >Больше историй в наших социальных сетях</PrimaryHeading
-    >
+    <PrimaryHeading class="lg:max-w-[404px]">
+      Больше историй в наших социальных сетях
+    </PrimaryHeading>
     <div class="flex gap-5 items-center lg:h-16">
-      <RouterLink to="/news">
+      <NuxtLink to="/news">
         <YoutubeShortsIcon />
-      </RouterLink>
-      <RouterLink to="/news">
+      </NuxtLink>
+      <NuxtLink to="/news">
         <ColoredYoutubeIcon class="w-10" />
-      </RouterLink>
-      <RouterLink to="/news" class="border rounded-lg">
+      </NuxtLink>
+      <NuxtLink to="/news" class="border rounded-lg">
         <VKIcon />
-      </RouterLink>
-      <RouterLink to="/news" class="border rounded-lg">
+      </NuxtLink>
+      <NuxtLink to="/news" class="border rounded-lg">
         <OKIcon />
-      </RouterLink>
-      <RouterLink to="/news" class="border rounded-lg">
+      </NuxtLink>
+      <NuxtLink to="/news" class="border rounded-lg">
         <TelegramIcon />
-      </RouterLink>
+      </NuxtLink>
     </div>
   </div>
   <div class="mt-10 lg:mt-4">

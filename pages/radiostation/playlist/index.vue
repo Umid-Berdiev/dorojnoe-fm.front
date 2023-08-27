@@ -18,29 +18,31 @@
 </script>
 
 <template>
-  <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
-  <TheBreadcrumb :path="['Радиостанция', 'Плейлист']" />
-  <div class="flex">
-    <PrimaryHeading underlined>Плейлист</PrimaryHeading>
-    <SearchMIcon class="lg:hidden ml-auto mt-1" />
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-6">
-    <CustomSelect
-      :options="options"
-      v-model="selectedOption"
-      as-value="id"
-      as-label="name"
-    />
-    <VDatePicker />
-    <div class="flex justify-between md:justify-normal md:gap-3">
-      <VTimePicker v-model="selectedTime" prefix="С" />
-      <VTimePicker v-model="selectedTime" prefix="До" />
+  <div class="default-container">
+    <TheMobileBreadcrumb>Радиостанция</TheMobileBreadcrumb>
+    <TheBreadcrumb :path="['Радиостанция', 'Плейлист']" />
+    <div class="flex">
+      <PrimaryHeading underlined>Плейлист</PrimaryHeading>
+      <SearchMIcon class="lg:hidden ml-auto mt-1" />
     </div>
-    <SearchInput class="ml-auto hidden lg:block" />
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-6">
+      <CustomSelect
+        :options="options"
+        v-model="selectedOption"
+        as-value="id"
+        as-label="name"
+      />
+      <VDatePicker />
+      <div class="flex justify-between md:justify-normal md:gap-3">
+        <VTimePicker v-model="selectedTime" prefix="С" />
+        <VTimePicker v-model="selectedTime" prefix="До" />
+      </div>
+      <SearchInput class="ml-auto hidden lg:block" />
+    </div>
+    <hr class="text-[#DBDBDB]" />
+    <Playlist />
+    <NewsCard />
   </div>
-  <hr class="text-[#DBDBDB]" />
-  <Playlist />
-  <NewsCard />
 </template>
 
 <style scoped lang="scss">

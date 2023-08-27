@@ -46,7 +46,7 @@
     :initialSlide="selectedItemIndex"
     class="radio-btn-swiper"
     :slidesPerView="'auto'"
-    :centeredSlides="true"
+    :centeredSlides="false"
     :spaceBetween="12"
   >
     <SwiperSlide>

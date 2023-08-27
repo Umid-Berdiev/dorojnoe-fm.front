@@ -1,16 +1,22 @@
+<script setup lang="ts">
+  import SimpleBar from "simplebar-vue";
+</script>
+
 <template>
-  <div class="left-block flex-none">
-    <div class="logo w-full text-center">
-      <NuxtLink to="/" class="inline-flex">
-        <LogoIcon />
-      </NuxtLink>
+  <SimpleBar class="max-h-screen">
+    <div class="left-block flex-none">
+      <div class="logo w-full text-center">
+        <NuxtLink to="/" class="inline-flex">
+          <LogoIcon />
+        </NuxtLink>
+      </div>
+      <RadioPlayer />
+      <div class="vote">
+        <button type="button">Голосовать</button>
+      </div>
+      <SidebarMenu />
     </div>
-    <RadioPlayer />
-    <div class="vote">
-      <button type="button">Голосовать</button>
-    </div>
-    <SidebarMenu class="mt-3" />
-  </div>
+  </SimpleBar>
 </template>
 
 <style scoped lang="scss">

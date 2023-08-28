@@ -12,7 +12,7 @@
   <section class="default-container">
     <TheMobileBreadcrumb />
     <TheBreadcrumb :path="['Акции и события']" />
-    <section>
+    <div>
       <div class="flex gap-12">
         <PrimaryHeading underlined>Акции</PrimaryHeading>
         <h1 class="font-roboto-condensed text-[24px] uppercase">Правила</h1>
@@ -55,7 +55,7 @@
         </CustomSelect>
       </div>
       <PromotionCard />
-    </section>
+    </div>
   </section>
   <section class="mt-16 lg:mt-20">
     <CommentForm />

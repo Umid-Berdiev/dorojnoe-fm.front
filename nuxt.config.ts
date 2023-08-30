@@ -46,4 +46,7 @@ export default defineNuxtConfig({
       include: ["@vueform/multiselect"],
     },
   },
+  nitro: {
+    preset: "cleavr",
+  },
 });

@@ -48,4 +48,7 @@ export default defineNuxtConfig({
       include: ["@vueform/multiselect"],
     },
   },
+  nitro: {
+    inlineDynamicImports: true,
+  },
 });

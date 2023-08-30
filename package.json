@@ -2,11 +2,12 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "node --max-old-space-size=8192 node_modules/nuxt/bin/nuxt.mjs build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
-    "preview": "node --max-old-space-size=8192 node_modules/nuxt/bin/nuxt.mjs preview"
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.2",

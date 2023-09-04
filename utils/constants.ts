@@ -65,11 +65,11 @@ export const radioStationMenuItems = [
 ];
 
 export const broadcastProgramMenuItems = [
-  {
-    label: "Посиделки на Дорожном радио",
-    path: "/broadcast-programs/gatherings",
-  },
-  { label: "Запаска", path: "/broadcast-programs/spare-wheel" },
+  // {
+  //   label: "Посиделки на Дорожном радио",
+  //   path: "/broadcast-programs/gatherings",
+  // },
+  // { label: "Запаска", path: "/broadcast-programs/spare-wheel" },
   { label: "Путешествие с удовольствием", path: "/broadcast-programs" },
   { label: "Негородская жизнь", path: "/broadcast-programs/non-city-life" },
   { label: "Танцы по-русски", path: "/broadcast-programs" },

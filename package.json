@@ -6,8 +6,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
-    "preview": "nuxt preview",
-    "start": "node .output/server/index.mjs"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.2",

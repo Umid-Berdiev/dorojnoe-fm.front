@@ -30,6 +30,6 @@
     "flowbite": "^1.8.1",
     "nuxt-swiper": "^1.2.2",
     "simplebar-vue": "^2.3.3",
-    "v-calendar": "^2.4.1"
+    "v-calendar": "^3.0.3"
   }
 }

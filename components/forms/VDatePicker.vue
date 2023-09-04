@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { DatePicker } from "v-calendar";
   import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
+
   import "v-calendar/style.css";
 
   const props = withDefaults(

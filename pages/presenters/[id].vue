@@ -22,7 +22,7 @@
     <div class="content">
       <div class="flex flex-col lg:flex-row gap-x-20 gap-y-6">
         <img
-          :srcset="`${presenter.main_photo} 1x, ${presenter.main_photo} 2x`"
+          :src="presenter.main_photo"
           alt="Presenter cover image"
           class="basis-1/2 w-full"
         />
@@ -60,10 +60,7 @@
           style="align-items: start"
         >
           <img
-            srcset="
-              /assets/images/broadcast_details1.png 1x,
-              /assets/images/broadcast_details1.png 2x
-            "
+            src="/assets/images/broadcast_details1.png"
             alt="Broadcast cover image"
             class="rounded-full w-[90px] h-[90px] lg:w-[116px] lg:h-[116px]"
           />
@@ -122,10 +119,7 @@
         >
           <template v-for="photo in presenter.photos">
             <SwiperSlide>
-              <img
-                :srcset="`${photo} 1x, ${photo} 2x`"
-                alt="Presenter next cover image"
-              />
+              <img :src="photo" alt="Presenter next cover image" />
             </SwiperSlide>
           </template>
         </Swiper>

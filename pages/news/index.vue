@@ -137,7 +137,7 @@
           </template>
         </div>
         <PrimaryButtonWhite
-          class="text-base text-[#FE576F] justify-center p-4 border border-[#FE576F] rounded-xl font-inter font-bold w-full lg:w-auto"
+          class="text-[#FE576F] justify-center p-4 border border-[#FE576F] rounded-xl font-bold w-full lg:w-auto"
         >
           Смотреть ещё
         </PrimaryButtonWhite>

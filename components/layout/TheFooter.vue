@@ -99,7 +99,7 @@
       </Swiper>
     </div>
     <div class="flex mx-auto px-3 py-5 lg:px-8 lg:py-10">
-      <div class="main-links grid grid-cols-2 md:grid-cols-3 lg:w-3/4 gap-y-2">
+      <div class="main-links grid grid-cols-2 lg:w-3/4 gap-y-2">
         <NuxtLink to="/">Артисты</NuxtLink>
         <NuxtLink to="/">Акции и события</NuxtLink>
         <NuxtLink to="/">Заказать песню</NuxtLink>
@@ -181,16 +181,7 @@
       </div>
     </div>
     <div class="px-3 pt-1 pb-3 mt-2">
-      <div class="blue-bird">
-        <PlayMobile />
-        <div class="flex flex-col">
-          <span class="singer-fullname">Владимир Пресняков</span>
-          <span class="song-title">Синяя птица</span>
-        </div>
-        <div class="p-3 ml-auto">
-          <LinkIcon />
-        </div>
-      </div>
+      <BottomPlayer />
     </div>
   </section>
 </template>
@@ -238,31 +229,5 @@
 
   .stores-mobile {
     @apply inline-flex gap-4 lg:hidden;
-  }
-
-  .blue-bird {
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.24);
-    @apply lg:hidden flex items-center p-2;
-
-    .singer-fullname {
-      color: #9d9d9d;
-      // font-family: "Inter";
-      font-size: 10px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    .song-title {
-      color: #000;
-      // font-family: "Inter";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 900;
-      line-height: normal;
-      letter-spacing: 0.4px;
-    }
   }
 </style>

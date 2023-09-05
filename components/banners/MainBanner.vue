@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { fetchBanners } from "@/utils/api/general";
+  // import { fetchBanners } from "@/utils/api/general";
   import { EffectCreative, Pagination } from "swiper/modules";
 
   const modules = [EffectCreative, Pagination];
@@ -15,7 +15,7 @@
     "/assets/images/banners/2x/Property1Variant3.png",
     "/assets/images/banners/2x/Property1Variant4.png",
   ];
-  const { data } = await fetchBanners();
+  // const { data } = await fetchBanners();
 </script>
 
 <template>
@@ -41,10 +41,7 @@
         v-for="(banner, bannerIndex) in banners1"
         class="cursor-pointer"
       >
-        <img
-          :srcset="`${banner} 1x, ${banners2[bannerIndex]} 2x`"
-          class="w-auto"
-        />
+        <img :src="banner" class="rounded-3xl" />
       </SwiperSlide>
     </Swiper>
   </div>

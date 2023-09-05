@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <SimpleBar class="max-h-screen">
+  <SimpleBar class="max-h-screen w-full lg:w-[280px]">
     <div class="left-block flex-none">
       <div class="logo w-full text-center">
         <NuxtLink to="/" class="inline-flex">
@@ -14,7 +14,9 @@
       <div class="vote">
         <button type="button">Голосовать</button>
       </div>
-      <SidebarMenu />
+
+      <!-- <SidebarMenu /> -->
+      <VerticalMenu />
     </div>
   </SimpleBar>
 </template>

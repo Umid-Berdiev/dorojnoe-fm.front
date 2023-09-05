@@ -60,21 +60,6 @@
 
 <style scoped lang="scss">
   .radio-player-wrapper {
-    .frequency-select {
-      @apply block
-      p-2.5
-      w-full
-      text-sm
-      text-gray-500
-      bg-transparent
-      border-0
-      border-gray-200
-      appearance-none
-      focus:outline-none
-      focus:ring-0
-      focus:border-gray-200;
-    }
-
     .hidden-block {
       display: none;
       position: absolute;
@@ -90,7 +75,7 @@
       .volume-control-wrapper {
         box-shadow: 0px 6.6579976081848145px 13.315995216369629px -8.322497367858887px
           rgba(0, 0, 0, 0.12);
-        @apply flex absolute top-[13.6rem] left-[14.5rem] items-center gap-2 lg:w-[10rem] bg-white p-2 pr-4 rounded-full z-50;
+        @apply flex fixed top-[13.55rem] left-[17.75rem] items-center gap-2 lg:w-[10rem] bg-white p-2 pr-4 rounded-full z-50;
       }
 
       /** FF*/

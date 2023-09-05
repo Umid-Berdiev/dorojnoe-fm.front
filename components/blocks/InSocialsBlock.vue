@@ -49,7 +49,7 @@
     >
       <template v-for="item in slider2Data">
         <SwiperSlide>
-          <img :srcset="`${item} 1x, ${item} 2x`" />
+          <img :src="item" />
         </SwiperSlide>
       </template>
     </Swiper>

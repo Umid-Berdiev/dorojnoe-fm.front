@@ -120,15 +120,17 @@
     <div class="relative my-16 lg:my-28 h-[412px] lg:h-[542px]">
       <div class="flex flex-row gap-3">
         <template v-for="city in cities">
-          <RadioButton
-            :id="city.name"
-            name="city"
-            :value="city.name"
-            :checked="selectedCity?.name === city.name"
-            @input="selectedCity = city"
+          <button
+            :class="[
+              'px-4 py-2.5 rounded-43xl hover:bg-firebrick hover:text-white text-sm lg:text-base leading-5 ',
+              selectedCity.name === city.name
+                ? 'bg-firebrick text-white'
+                : 'bg-white text-black',
+            ]"
+            @click="selectedCity = city"
           >
             {{ city.name }}
-          </RadioButton>
+          </button>
         </template>
       </div>
       <TheMap :current-lnglat="selectedCity?.lnglat" />

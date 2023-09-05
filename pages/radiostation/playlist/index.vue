@@ -1,11 +1,4 @@
 <script lang="ts" setup>
-  import CustomSelect from "@/components/forms/CustomSelect.vue";
-  import VDatePicker from "@/components/forms/VDatePicker.vue";
-  import VTimePicker from "@/components/forms/VTimePicker.vue";
-  import SearchInput from "@/components/forms/SearchInput.vue";
-  import Playlist from "@/components/lists/playlist/Playlist.vue";
-  import NewsCard from "@/components/cards/NewsCard/index.vue";
-
   const options = ref([
     { id: 1, name: "Основной эфир" },
     { id: 2, name: "Танцы по-русски" },
@@ -25,7 +18,7 @@
       <PrimaryHeading underlined>Плейлист</PrimaryHeading>
       <SearchMIcon class="lg:hidden ml-auto mt-1" />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-3 mb-6">
       <CustomSelect
         :options="options"
         v-model="selectedOption"
@@ -33,7 +26,7 @@
         as-label="name"
       />
       <VDatePicker />
-      <div class="flex justify-between md:justify-normal md:gap-3">
+      <div class="flex justify-between lg:justify-normal lg:gap-3">
         <VTimePicker v-model="selectedTime" prefix="С" />
         <VTimePicker v-model="selectedTime" prefix="До" />
       </div>

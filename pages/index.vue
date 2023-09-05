@@ -7,7 +7,6 @@
   const modules = [Navigation];
   const { data: news } = await fetchNews();
   const selectedOfTop10 = ref(7);
-  // const { data: newsCategories } = await fetchNewsCategories();
 </script>
 
 <template>
@@ -30,11 +29,6 @@
     <!-- anons -->
     <section class="mt-10">
       <AnonsSlider />
-      <!-- <div class="hidden lg:grid grid-cols-3 gap-6">
-        <img class="" srcset="/assets/images/anons1_1.png" alt="anons image" />
-        <img class="" srcset="/assets/images/anons1_2.png" alt="anons image" />
-        <img class="" srcset="/assets/images/anons1_3.png" alt="anons image" />
-      </div> -->
     </section>
     <!-- broadcast programs -->
     <section class="mt-20">
@@ -99,8 +93,8 @@
         <div class="lg:flex-none">
           <div class="flex lg:flex-col gap-4 lg:gap-10 items-center">
             <img
-              srcset="/assets/images/cover_top10.png"
-              alt="cover_top10 image"
+              src="/assets/images/cover_top10.png"
+              alt="top10 cover image"
               class="cover-top10"
             />
             <div class="">
@@ -129,18 +123,13 @@
       <Swiper
         id="news-page-carousel1"
         :spaceBetween="16"
-        :slidesPerView="'auto'"
+        :slidesPerView="1.8"
         :breakpoints="{
-          '768': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
           '1280': {
-            slidesPerView: 2,
+            slidesPerView: 2.8,
             spaceBetween: 24,
           },
         }"
-        :freeMode="true"
         :navigation="true"
         :modules="modules"
       >
@@ -163,7 +152,7 @@
             </template>
           </div>
           <PrimaryButtonWhite
-            class="text-base text-[#FE576F] justify-center p-4 border border-[#FE576F] rounded-xl font-inter font-bold w-full lg:w-auto"
+            class="text-[#FE576F] justify-center p-4 border border-[#FE576F] rounded-xl font-bold w-full lg:w-auto"
           >
             Смотреть ещё
           </PrimaryButtonWhite>

@@ -10,6 +10,7 @@
   <aside
     class="sidebar-wrapper"
     :class="{ 'w-[80rem]': isSidebarOpen, 'w-[280px]': !isSidebarOpen }"
+    aria-label="Sidebar"
   >
     <ChevronDoubleRightIcon
       v-if="!isSidebarOpen"
@@ -46,7 +47,7 @@
 
   .sidebar-wrapper {
     transition: width 0.5s ease;
-    @apply hidden lg:flex fixed top-0 z-40 h-screen bg-white;
+    @apply hidden lg:flex fixed top-0 z-40 h-screen bg-white pb-4;
 
     .right-block {
       @apply bg-main-bg-light flex flex-col items-start shrink-0 lg:w-[348px] p-8 relative h-full;

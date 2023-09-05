@@ -80,9 +80,6 @@
 
 <template>
   <Listbox as="div" v-model="selected" v-slot="{ open }">
-    <!-- <ListboxLabel class="block text-sm font-medium leading-6 text-gray-900"
-      >Assigned to</ListboxLabel
-    > -->
     <div class="relative mt-2">
       <ListboxButton
         class="relative w-full cursor-pointer bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 focus:outline-none sm:text-sm sm:leading-6"

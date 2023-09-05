@@ -6,44 +6,23 @@
   const route = useRoute();
 
   const routeLinks = computed(() => {
-    const routePathArr = route.path.split("/");
+    const filteredRoute = route.path.includes("radiostation")
+      ? "/"
+      : route.path;
+    const routePathArr = filteredRoute.split("/");
     if (routePathArr.length > 1) routePathArr.shift();
     return routePathArr;
   });
 </script>
 
 <template>
-  <nav class="hidden lg:flex mb-6 md:mb-14" aria-label="Breadcrumb">
-    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+  <nav class="hidden lg:flex mb-6 lg:mb-14" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 lg:space-x-3">
       <li class="inline-flex items-center">
         <NuxtLink to="/" class="inline-flex items-center text-base">
           Главная
         </NuxtLink>
       </li>
-      <!-- <li v-if="path[0]">
-        <div class="flex items-center">
-          /
-          <NuxtLink
-            to="/"
-            :class="[
-              'ml-1 text-base text-gray-700 hover:text-blue-600 md:ml-2',
-              path.length === 1 && 'text-main-grey',
-            ]"
-          >
-            {{ path[0] }}
-          </NuxtLink>
-        </div>
-      </li>
-      <li aria-current="page" v-if="path[1]">
-        <div class="flex items-center">
-          /
-          <p
-            class="ml-1 text-base text-main-grey md:ml-2 lg:max-w-[300px] truncate"
-          >
-            {{ path[1] }}
-          </p>
-        </div>
-      </li> -->
       <template v-for="(link, linkIdx) in path">
         <li>
           <p class="flex items-center text-base">
@@ -54,6 +33,9 @@
             >
               {{ link }}
             </span>
+            <span v-else-if="link === 'Радиостанция'" class="ml-1 lg:ml-2">{{
+              link
+            }}</span>
             <NuxtLink
               v-else
               :to="`/${routeLinks.slice(0, linkIdx + 1).join('/')}`"

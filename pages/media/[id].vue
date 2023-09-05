@@ -46,7 +46,7 @@
             class="absolute left-[45%] top-[45%] lg:left-[35%] lg:top-[40%] w-8 lg:w-20"
           />
           <img
-            :srcset="media.video"
+            :src="media.video"
             alt="Media cover image"
             class="w-full rounded-[20px]"
           />
@@ -64,7 +64,7 @@
       <div class="hidden lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-10">
         <template v-for="(photo, photoIndex) in media.photos">
           <img
-            :srcset="`${photo} 1x, ${photo} 2x`"
+            :src="photo"
             alt="Media photo"
             class="w-full rounded-lg"
             @click="openGalleryModal(photoIndex)"
@@ -82,7 +82,7 @@
           <template v-for="(photo, photoIndex) in media.photos">
             <SwiperSlide>
               <img
-                :srcset="`${photo} 1x, ${photo} 2x`"
+                :src="photo"
                 alt="Media photo"
                 class="w-full rounded-lg"
                 @click="openGalleryModal(photoIndex)"

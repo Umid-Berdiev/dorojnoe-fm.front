@@ -1,6 +1,7 @@
 <script setup lang="ts">
   // import { fetchAllEvents } from "~/utils/api/promotions";
 
+  const isLoading = ref(false);
   // const { data: promotions } = await fetchAllEvents();
   const promotions = ref([
     {
@@ -46,12 +47,14 @@
   <div class="mt-16">
     <!-- <PrimaryHeading>Новое на Дорожном радио</PrimaryHeading> -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-6 lg:gap-y-12"
+      class="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-x-6 lg:gap-y-12"
     >
       <template v-for="item in promotions">
         <PromotionCardItem :item="item" />
       </template>
     </div>
-    <PrimaryButtonRed class="mt-12 lg:mt-16">Больше конкурсов</PrimaryButtonRed>
+    <PrimaryButtonRed class="mt-12 lg:mt-16" :loading="isLoading">
+      Больше конкурсов
+    </PrimaryButtonRed>
   </div>
 </template>

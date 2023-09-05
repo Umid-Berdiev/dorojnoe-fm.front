@@ -8,7 +8,13 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ["nuxt-swiper", "nuxt-mapbox", "@nuxtjs/google-fonts"],
+  modules: [
+    "nuxt-swiper",
+    "nuxt-mapbox",
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "@vueuse/nuxt",
+  ],
   css: ["~/assets/scss/main.scss"],
   components: [
     {
@@ -29,7 +35,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Inter: [400, 500, 600, 700],
+      Inter: [400, 500, 600, 700, 900],
       Montserrat: [400, 500, 600, 700, 900],
       Oswald: [400, 500, 600, 700],
       "Roboto Condensed": [400, 500, 600, 700],
@@ -44,11 +50,22 @@ export default defineNuxtConfig({
     },
   },
   vite: {
+    logLevel: "info",
     optimizeDeps: {
       include: ["@vueform/multiselect"],
     },
   },
-  nitro: {
-    inlineDynamicImports: true,
+  build: {
+    transpile: ["@headlessui/vue", "@heroicons/vue"],
+  },
+  image: {
+    densities: [1, 2],
+    format: ["webp"],
+    quality: 80,
+    screens: {
+      xs: 320,
+      lg: 1024,
+      xl: 1280,
+    },
   },
 });

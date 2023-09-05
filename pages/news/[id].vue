@@ -27,10 +27,9 @@
     <TheBreadcrumb :path="['Новости', item.title]" />
     <div class="max-w-[656px]">
       <div class="flex gap-2 mb-4 items-center">
-        <PrimaryButtonWhite
-          class="px-2.5 py-1.5 rounded-43xl font-inter text-sm"
-          >{{ item.category }}</PrimaryButtonWhite
-        >
+        <PrimaryButtonWhite class="px-2.5 py-1.5 rounded-43xl text-sm">{{
+          item.category
+        }}</PrimaryButtonWhite>
         <p class="text-main-grey font-inter text-sm">{{ item.date }}</p>
       </div>
       <PrimaryHeading>{{ item.title }}</PrimaryHeading>
@@ -38,7 +37,7 @@
     <div class="flex lg:gap-10">
       <div class="w-full lg:basis-3/4">
         <img
-          :srcset="`${item.image} 1x, ${item.image} 2x`"
+          :src="item.image"
           alt="News cover image"
           class="w-full rounded-2xl"
         />
@@ -57,10 +56,7 @@
           <p>{{ item.body }}</p>
         </div>
         <img
-          srcset="
-            /assets/images/news_id_page_second_cover.png 1x,
-            /assets/images/news_id_page_second_cover.png 2x
-          "
+          src="/assets/images/news_id_page_second_cover.png"
           alt="News cover image"
           class="w-full rounded-2xl"
         />

@@ -111,11 +111,11 @@
 }
 
 #socials-carousel {
-  .swiper-wrapper {
-    .swiper-slide img {
-      width: 100%;
-    }
-  }
+  // .swiper-wrapper {
+  //   .swiper-slide img {
+  //     width: 100%;
+  //   }
+  // }
 
   .swiper-button-next,
   .swiper-button-prev {
@@ -196,13 +196,13 @@
 }
 
 #main-banner-swiper {
-  @apply h-[25.25rem];
+  @apply h-[14.5rem] lg:h-[25.25rem];
 
-  .swiper-wrapper {
-    .swiper-slide img {
-      @apply h-[23rem] lg:h-auto rounded-3xl;
-    }
-  }
+  // .swiper-wrapper {
+  //   .swiper-slide img {
+  //     @apply rounded-3xl;
+  //   }
+  // }
 
   .swiper-pagination {
     @apply bottom-0 text-center lg:text-start lg:pl-8;

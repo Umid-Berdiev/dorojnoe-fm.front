@@ -5,22 +5,25 @@
     item: PresenterType;
   }>();
 </script>
+
 <template>
   <div>
     <div class="relative">
       <img
-        :srcset="`${item.mainImage?.disk_path?.square?.desktop} 1x, ${item.mainImage?.disk_path?.square?.desktop} 2x`"
+        :src="item.mainImage?.disk_path?.square?.desktop"
         alt="Presenter cover image"
-        class="hidden lg:block rounded-2xl w-full object-none"
+        class="hidden lg:block rounded-2xl w-full object-none h-[160px] lg:h-[204px]"
+        placeholder="/assets/images/placeholder-image.jpg"
       />
       <img
-        :srcset="`${item.mainImage?.disk_path?.square?.mobile} 1x, ${item.mainImage?.disk_path?.square?.mobile} 2x`"
+        :src="item.mainImage?.disk_path?.square?.mobile"
         alt="Presenter cover image"
-        class="lg:hidden rounded-2xl w-full object-none"
+        class="lg:hidden rounded-2xl w-full object-none h-[160px] lg:h-[204px]"
+        placeholder="/assets/images/placeholder-image.jpg"
       />
       <PrimaryButtonWhite
         v-show="item.birthPlace"
-        class="absolute left-2 bottom-3 lg:left-4 lg:bottom-6 font-inter text-xs lg:text-sm py-1 lg:py-1.5 px-2 rounded-lg font-bold"
+        class="absolute left-2 bottom-3 lg:left-4 lg:bottom-6 text-xs lg:text-sm py-1 lg:py-1.5 px-2 rounded-lg font-bold"
       >
         {{ item.birthPlace }}
       </PrimaryButtonWhite>
@@ -30,7 +33,3 @@
     </p>
   </div>
 </template>
-
-<style scoped lang="scss">
-  //
-</style>

@@ -13,7 +13,7 @@
   <div class="broadcast-program-detail-wrapper">
     <div class="relative">
       <img
-        :srcset="data.previewImage"
+        :src="data.previewImage"
         alt="broadcast program cover"
         class="preview-img"
       />

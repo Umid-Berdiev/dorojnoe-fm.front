@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  const isLoading = ref(false);
   const promotionCategories = ref([
     { value: "promotions", name: "Конкурсы и акции" },
     { value: "events", name: "События" },
@@ -60,7 +61,7 @@
   <section class="mt-16 lg:mt-20">
     <CommentForm />
   </section>
-  <section class="pt-12 lg:pt-28 px-3 md:px-8">
+  <section class="pt-12 lg:pt-28 px-3 lg:px-8">
     <PrimaryHeading underlined>Победители</PrimaryHeading>
     <NuxtList3>
       <template v-for="number in 10">
@@ -87,6 +88,8 @@
         </NuxtList3Item>
       </template>
     </NuxtList3>
-    <PrimaryButtonRed class="mt-10 lg:mt-16">Показать еще</PrimaryButtonRed>
+    <PrimaryButtonRed class="mt-10 lg:mt-16" :loading="isLoading">
+      Показать еще
+    </PrimaryButtonRed>
   </section>
 </template>

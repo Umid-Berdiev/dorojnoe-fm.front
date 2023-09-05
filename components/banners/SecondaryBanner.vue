@@ -1,7 +1,4 @@
 <script setup lang="ts">
-  import { Pagination } from "swiper/modules";
-
-  const modules = [Pagination];
   const slides = [
     {
       mainImage: "/assets/images/banners/Cover2.png",
@@ -32,7 +29,7 @@
       :slideToClickedSlide="true"
     >
       <SwiperSlide v-for="slide in slides" class="cursor-pointer">
-        <img :srcset="`${slide.mainImage}`" alt="slide image" />
+        <img :src="slide.mainImage" :alt="slide.title" />
         <p class="slide-title">{{ slide.title }}</p>
         <p class="slide-singer">{{ slide.singer }}</p>
       </SwiperSlide>

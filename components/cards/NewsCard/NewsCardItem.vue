@@ -12,7 +12,7 @@
     <NuxtLink :to="`/news/${item.id}`" class="">
       <div class="relative">
         <img
-          :srcset="`${item.mainImage?.disk_path?.image} 1x, ${item.mainImage?.disk_path?.image} 2x`"
+          :src="item.mainImage?.disk_path?.image"
           class="w-full rounded-2xl"
         />
         <button

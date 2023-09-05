@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { DatePicker } from "v-calendar";
   import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/20/solid";
-
   import "v-calendar/style.css";
 
   const props = withDefaults(
@@ -86,6 +85,7 @@
     font-inter 
     pl-4 
     pr-2 
+    py-3 
     max-h-[40px];
   }
 </style>

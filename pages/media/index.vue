@@ -197,7 +197,7 @@
         </template>
       </div>
       <div class="flex mt-12">
-        <PrimaryButtonRed @click="loadMore" :loading="isLoading">
+        <PrimaryButtonRed :loading="isLoading" @click="loadMore">
           Больше фото и видео
         </PrimaryButtonRed>
       </div>

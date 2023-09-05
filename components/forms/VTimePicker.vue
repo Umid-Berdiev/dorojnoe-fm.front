@@ -50,7 +50,7 @@
   <Listbox v-model="selectedOption" v-slot="{ open }">
     <div class="relative">
       <ListboxButton
-        class="flex align-middle bg-white pl-4 py-2.5 gap-2 text-center w-40 md:w-24 text-sm lg:text-base font-inter leading-5"
+        class="flex align-middle bg-white pl-4 py-2.5 gap-2 text-center w-40 lg:w-24 text-sm lg:text-base font-inter leading-5"
         :class="{ 'rounded-3xl': !open, 'rounded-t-3xl': open }"
       >
         <span class="pointer-events-none items-center">{{ prefix }}</span>

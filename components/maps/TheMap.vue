@@ -21,9 +21,6 @@
 
   watch(props, (newVal) => {
     if (newVal.currentLnglat && mapboxInstance.value) {
-      // mapboxOptions.value.center = props.currentLnglat;
-      console.log(mapboxInstance.value);
-
       mapboxInstance.value.setLayoutProperty("country-label", "text-field", [
         "get",
         "name_ru",
@@ -61,11 +58,6 @@
 
 <style lang="scss">
   #mapbox {
-    // bottom: 0;
-    // top: auto;
-    // height: 100%;
-    // max-height: 480px;
-    // border-radius: 32px;
     @apply bottom-0 top-auto h-full max-h-[336px] lg:max-h-[480px] rounded-4xl;
   }
 </style>

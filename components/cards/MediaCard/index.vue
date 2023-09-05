@@ -26,12 +26,12 @@
 <template>
   <div class="media-card">
     <img
-      :srcset="`${coverDesktopImage} 1x, ${coverDesktopImage} 2x`"
+      :src="coverDesktopImage"
       :alt="media.name"
       class="hidden lg:inline-block rounded-lg w-full"
     />
     <img
-      :srcset="`${coverMobileImage} 1x, ${coverMobileImage} 2x`"
+      :src="coverMobileImage"
       :alt="media.name"
       class="lg:hidden rounded-lg w-full"
     />
